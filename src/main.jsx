@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { ConfigProvider, App as AntdApp } from "antd";
 import App from "./App.jsx";
+import "./index.scss";
 
 const appTheme = {
   token: {
@@ -13,6 +14,7 @@ const appTheme = {
     colorTextBase: "#2c313c",
     colorBgBase: "#fcfcfd",
     colorSuccess: "#43e285",
+    fontFamily: "'Raleway', sans-serif",
   },
 };
 

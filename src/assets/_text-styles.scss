@@ -1,0 +1,40 @@
+@mixin body-text() {
+  font-size: 1rem;
+  font-family: Raleway;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin small-text() {
+  font-size: 0.833rem;
+  font-family: Raleway;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-1() {
+  font-size: 2.986rem;
+  font-family: Raleway;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-2() {
+  font-size: 2.488rem;
+  font-family: Raleway;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin heading-3() {
+  font-size: 2.074rem;
+  font-family: Raleway;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+}
