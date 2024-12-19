@@ -1,0 +1,14 @@
+@use "../../assets/scss/colors";
+@use "../../assets/scss/text-styles";
+
+.section {
+  .title-container {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+
+    .title {
+      @include text-styles.form-section-title;
+    }
+  }
+}

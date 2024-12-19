@@ -1,3 +1,5 @@
+import "./FormSection.scss";
+
 const FormSection = ({ icon, title, children }) => {
   return (
     <div className="section">

@@ -1,40 +1,42 @@
+@mixin common-styles() {
+  font-style: normal;
+  text-decoration: none;
+  text-transform: none;
+  line-height: normal;
+}
+
 @mixin body-text() {
+  @include common-styles;
   font-size: 1rem;
-  font-family: Raleway;
   font-weight: 400;
-  font-style: normal;
-  text-decoration: none;
-  text-transform: none;
 }
+
 @mixin small-text() {
+  @include common-styles;
   font-size: 0.833rem;
-  font-family: Raleway;
   font-weight: 400;
-  font-style: normal;
-  text-decoration: none;
-  text-transform: none;
 }
+
 @mixin heading-1() {
+  @include common-styles;
   font-size: 2.986rem;
-  font-family: Raleway;
   font-weight: 700;
-  font-style: normal;
-  text-decoration: none;
-  text-transform: none;
 }
+
 @mixin heading-2() {
+  @include common-styles;
   font-size: 2.488rem;
-  font-family: Raleway;
   font-weight: 700;
-  font-style: normal;
-  text-decoration: none;
-  text-transform: none;
 }
+
 @mixin heading-3() {
+  @include common-styles;
   font-size: 2.074rem;
-  font-family: Raleway;
   font-weight: 600;
-  font-style: normal;
-  text-decoration: none;
-  text-transform: none;
+}
+
+@mixin form-section-title() {
+  @include common-styles;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
