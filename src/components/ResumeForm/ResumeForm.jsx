@@ -5,7 +5,7 @@ import "./ResumeForm.scss";
 
 const ResumeForm = () => {
   return (
-    <Form name="resume-form" layout="vertical">
+    <Form name="resume-form" className="resume-form" layout="vertical">
       <FormSection icon={<FaUser />} title="Personal Information">
         <Form.Item label="Full name" name="fullName" hasFeedback>
           <Input placeholder="e.g. John Doe" />

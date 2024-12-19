@@ -4,3 +4,11 @@
 .ant-form-item-label {
   @include text-styles.form-label;
 }
+
+.resume-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 450px;
+}
