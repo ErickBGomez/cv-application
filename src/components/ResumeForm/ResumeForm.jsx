@@ -1,6 +1,7 @@
 import { Form, Input } from "antd";
 import { FaUser } from "react-icons/fa";
 import FormSection from "../FormSection/FormSection";
+import "./ResumeForm.scss";
 
 const ResumeForm = () => {
   return (
