@@ -2,6 +2,17 @@
 @use "../../assets/scss/text-styles";
 
 .section {
+  display: flex;
+  padding: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+  align-self: stretch;
+  border-radius: 1rem;
+  border: 1px solid colors.$black-10;
+  background: colors.$black-05;
+
   .title-container {
     display: flex;
     gap: 0.6rem;

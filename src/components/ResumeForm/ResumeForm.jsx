@@ -4,9 +4,9 @@ import FormSection from "../FormSection/FormSection";
 
 const ResumeForm = () => {
   return (
-    <Form>
+    <Form name="resume-form" layout="vertical">
       <FormSection icon={<FaUser />} title="Personal Information">
-        <Form.Item label="Full Name" name="fullName" hasFeedback>
+        <Form.Item label="Full name" name="fullName" hasFeedback>
           <Input />
         </Form.Item>
       </FormSection>

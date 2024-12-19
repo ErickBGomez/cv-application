@@ -7,7 +7,7 @@ const FormSection = ({ icon, title, children }) => {
         <div className="title-icon">{icon}</div>
         <div className="title">{title}</div>
       </div>
-      <div className="content">{children}</div>
+      <div className="inputs">{children}</div>
     </div>
   );
 };
