@@ -1,6 +1,6 @@
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import DragCard from "../DragCard/DragCoard";
+import DragCard from "../DragCard/DragCard";
 
 const DragCardsInput = ({ entries, context = "card" }) => {
   return (
