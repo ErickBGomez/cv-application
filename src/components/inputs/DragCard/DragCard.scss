@@ -8,6 +8,8 @@
   border: 1px solid colors.$black-25;
   border-radius: 0.5rem;
   padding: 1rem 0.5rem;
+  user-select: none;
+  cursor: pointer;
 
   .content {
     display: flex;

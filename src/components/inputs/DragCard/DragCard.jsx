@@ -3,7 +3,7 @@ import "./DragCard.scss";
 
 const DragCard = ({ title, description, smalltext }) => {
   return (
-    <div className="drag-card">
+    <div className="drag-card" onClick={() => console.log("Card clicked")}>
       <div className="drag-indicator">
         <MdDragIndicator />
       </div>
