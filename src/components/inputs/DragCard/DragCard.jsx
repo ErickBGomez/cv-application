@@ -1,4 +1,5 @@
 import { MdDragIndicator } from "react-icons/md";
+import "./DragCard.scss";
 
 const DragCard = ({ title, description, smalltext }) => {
   return (

@@ -1,2 +1,29 @@
 @use "../../../assets/scss/colors";
 @use "../../../assets/scss/text-styles";
+
+.drag-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid colors.$black-25;
+  border-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .drag-card-title {
+      @include text-styles.drag-card-title;
+    }
+
+    .drag-card-description {
+      @include text-styles.body-text;
+    }
+
+    .drag-card-smalltext {
+      @include text-styles.small-text;
+    }
+  }
+}
