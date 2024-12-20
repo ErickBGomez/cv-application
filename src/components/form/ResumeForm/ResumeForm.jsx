@@ -49,7 +49,7 @@ const ResumeForm = () => {
       </FormSection>
 
       <FormSection icon={<FaGraduationCap />} title="Education">
-        <DragCardsInput context="education" />
+        <DragCardsInput entries={educationEntries} context="education" />
       </FormSection>
     </Form>
   );
