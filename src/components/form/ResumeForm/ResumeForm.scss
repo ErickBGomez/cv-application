@@ -1,10 +1,6 @@
 @use "../../../assets/scss/colors";
 @use "../../../assets/scss/text-styles";
 
-.ant-form-item-label {
-  @include text-styles.form-label;
-}
-
 .resume-form {
   display: flex;
   flex-direction: column;
