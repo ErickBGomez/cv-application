@@ -46,3 +46,15 @@
   font-size: 1rem;
   font-weight: 600;
 }
+
+@mixin button() {
+  @include common-styles;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@mixin form-input() {
+  @include common-styles;
+  font-size: 1rem;
+  font-weight: 400;
+}

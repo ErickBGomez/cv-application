@@ -1,4 +1,5 @@
 @use "./assets/scss/colors";
+@use "./assets/scss/text-styles";
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&display=swap");
 
 :root {
@@ -9,4 +10,9 @@
 body {
   background-color: colors.$white;
   color: colors.$black;
+}
+
+button,
+input {
+  width: 100%;
 }

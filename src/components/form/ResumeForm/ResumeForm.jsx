@@ -2,6 +2,7 @@ import { Form, Input } from "antd";
 import { FaUser, FaPhoneAlt, FaGraduationCap } from "react-icons/fa";
 import FormSection from "../FormSection/FormSection";
 import "./ResumeForm.scss";
+import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
 
 const educationEntries = [
   {
@@ -47,7 +48,9 @@ const ResumeForm = () => {
         </Form.Item>
       </FormSection>
 
-      <FormSection icon={<FaGraduationCap />} title="Education"></FormSection>
+      <FormSection icon={<FaGraduationCap />} title="Education">
+        <DragCardsInput context="education" />
+      </FormSection>
     </Form>
   );
 };
