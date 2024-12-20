@@ -2,7 +2,8 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { ConfigProvider, App as AntdApp } from "antd";
 import App from "./App.jsx";
-import "./index.scss";
+import "./main.scss";
+import "./assets/scss/antd-reset.scss";
 
 const appTheme = {
   token: {
