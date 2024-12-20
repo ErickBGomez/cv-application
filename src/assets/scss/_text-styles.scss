@@ -58,3 +58,21 @@
   font-size: 1rem;
   font-weight: 400;
 }
+
+@mixin drag-card-title() {
+  @include common-styles;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+@mixin drag-card-description() {
+  @include common-styles;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@mixin drag-card-small() {
+  @include common-styles;
+  font-size: 0.833rem;
+  font-weight: 400;
+}
