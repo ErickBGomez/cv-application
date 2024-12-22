@@ -3,7 +3,7 @@ import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import "./DragCard.scss";
 import { useState } from "react";
 
-const DragCard = ({ title, description, smalltext }) => {
+const DragCard = ({ data }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
@@ -14,9 +14,15 @@ const DragCard = ({ title, description, smalltext }) => {
           <MdDragIndicator />
         </div>
         <div className="content">
-          <div className="drag-card-title">{title}</div>
-          <div className="drag-card-description">{description}</div>
-          <div className="drag-card-smalltext">{smalltext}</div>
+          <div className="drag-card-title">{data.title}</div>
+          <div className="drag-card-description">
+            {data.institution || data.punctuation}
+          </div>
+          {data.years && (
+            <div className="drag-card-smalltext">
+              {data.years.start} - {data.years.end}
+            </div>
+          )}
         </div>
       </div>
     </>

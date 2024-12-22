@@ -6,14 +6,7 @@ const DragCardsInput = ({ entries, context = "card" }) => {
   return (
     <>
       {entries &&
-        entries.map((entry) => (
-          <DragCard
-            key={entry.id}
-            title={entry.title}
-            description={entry.institution}
-            smalltext={`${entry.startYear} - ${entry.endYear}`}
-          />
-        ))}
+        entries.map((entry) => <DragCard key={entry.id} data={entry} />)}
       <Button icon={<PlusOutlined />}>Add {context}</Button>
     </>
   );

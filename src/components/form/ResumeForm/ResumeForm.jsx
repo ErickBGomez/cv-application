@@ -10,15 +10,19 @@ const educationEntries = [
     id: 1,
     title: "Bachelor of Science in Computer Science",
     institution: "University of Miami",
-    startYear: "2015",
-    endYear: "2019",
+    years: {
+      start: "2015",
+      end: "2019",
+    },
   },
   {
     id: 2,
     title: "High School Diploma",
     institution: "Miami Senior High School",
-    startYear: "2011",
-    endYear: "2015",
+    years: {
+      start: "2011",
+      end: "2015",
+    },
   },
 ];
 
@@ -27,15 +31,19 @@ const workEntries = [
     id: 1,
     title: "Web Developer",
     institution: "Google",
-    startYear: "2019",
-    endYear: "Present",
+    years: {
+      start: "2019",
+      end: "Present",
+    },
   },
   {
     id: 2,
     title: "Intern",
     institution: "Facebook",
-    startYear: "2018",
-    endYear: "2019",
+    years: {
+      start: "2018",
+      end: "2019",
+    },
   },
 ];
 
