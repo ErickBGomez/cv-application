@@ -1,4 +1,4 @@
-import { Modal, Form, Input } from "antd";
+import { Modal, Form, Input, Descriptions } from "antd";
 
 const EditCardModal = ({ context, open, setOpen, data, setData }) => {
   const [form] = Form.useForm();
@@ -29,7 +29,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
               <Input placeholder="e.g. Bachelor in Computer Science" />
             </Form.Item>
 
-            <Form.Item label="Institution" name="institution" hasFeedback>
+            <Form.Item label="Institution" name="description" hasFeedback>
               <Input placeholder="e.g. University of Miami" />
             </Form.Item>
 
@@ -50,7 +50,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
               <Input placeholder="e.g. Web Developer" />
             </Form.Item>
 
-            <Form.Item label="Company" name="company" hasFeedback>
+            <Form.Item label="Company" name="description" hasFeedback>
               <Input placeholder="e.g. Google" />
             </Form.Item>
 
@@ -71,7 +71,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
               <Input placeholder="e.g. JavaScript" />
             </Form.Item>
 
-            <Form.Item label="Proficiency" name="proficiency" hasFeedback>
+            <Form.Item label="Proficiency" name="description" hasFeedback>
               <Input placeholder="e.g. Expert" />
             </Form.Item>
           </>
@@ -92,11 +92,14 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       onCancel={handleClose}
     >
       <Form
-        name={`edit-card-form-id-${data.id}`}
+        name={`edit-card-form-${context}-${data.id}`}
         layout="vertical"
         form={form}
         initialValues={{
           title: data.title,
+          description: data.description,
+          startYear: data.startYear,
+          endYear: data.endYear,
         }}
         onFinish={onSubmit}
       >

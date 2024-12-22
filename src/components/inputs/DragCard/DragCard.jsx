@@ -21,12 +21,10 @@ const DragCard = ({ context, data, setData }) => {
         </div>
         <div className="content">
           <div className="drag-card-title">{data.title}</div>
-          <div className="drag-card-description">
-            {data.institution || data.punctuation}
-          </div>
-          {data.years && (
+          <div className="drag-card-description">{data.description}</div>
+          {data.startYear && data.endYear && (
             <div className="drag-card-smalltext">
-              {data.years.start} - {data.years.end}
+              {data.startYear} - {data.endYear}
             </div>
           )}
         </div>
