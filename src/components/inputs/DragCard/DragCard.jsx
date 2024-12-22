@@ -3,12 +3,13 @@ import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import "./DragCard.scss";
 import { useState } from "react";
 
-const DragCard = ({ data, setData }) => {
+const DragCard = ({ context, data, setData }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <>
       <EditCardModal
+        context={context}
         open={modalOpen}
         setOpen={setModalOpen}
         data={data}

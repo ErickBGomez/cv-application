@@ -7,7 +7,12 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
     <>
       {entries &&
         entries.map((entry) => (
-          <DragCard key={entry.id} data={entry} setData={setEntries} />
+          <DragCard
+            key={entry.id}
+            context={context}
+            data={entry}
+            setData={setEntries}
+          />
         ))}
       <Button icon={<PlusOutlined />}>Add {context}</Button>
     </>

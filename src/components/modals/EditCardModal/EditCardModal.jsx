@@ -1,6 +1,6 @@
 import { Modal, Form, Input } from "antd";
 
-const EditCardModal = ({ open, setOpen, data, setData }) => {
+const EditCardModal = ({ context, open, setOpen, data, setData }) => {
   const [form] = Form.useForm();
 
   const onSubmit = (values) => {
@@ -20,8 +20,77 @@ const EditCardModal = ({ open, setOpen, data, setData }) => {
     handleClose();
   };
 
+  const createFields = (context) => {
+    switch (context) {
+      case "education":
+        return (
+          <>
+            <Form.Item label="Title" name="title" hasFeedback>
+              <Input placeholder="e.g. Bachelor in Computer Science" />
+            </Form.Item>
+
+            <Form.Item label="Institution" name="institution" hasFeedback>
+              <Input placeholder="e.g. University of Miami" />
+            </Form.Item>
+
+            <Form.Item label="Start year" name="startYear" hasFeedback>
+              <Input placeholder="e.g. 2019" />
+            </Form.Item>
+
+            <Form.Item label="End year" name="endYear" hasFeedback>
+              <Input placeholder="e.g. 2024" />
+            </Form.Item>
+          </>
+        );
+
+      case "work experience":
+        return (
+          <>
+            <Form.Item label="Title" name="title" hasFeedback>
+              <Input placeholder="e.g. Web Developer" />
+            </Form.Item>
+
+            <Form.Item label="Company" name="company" hasFeedback>
+              <Input placeholder="e.g. Google" />
+            </Form.Item>
+
+            <Form.Item label="Start year" name="startYear" hasFeedback>
+              <Input placeholder="e.g. 2019" />
+            </Form.Item>
+
+            <Form.Item label="End year" name="endYear" hasFeedback>
+              <Input placeholder="e.g. Present" />
+            </Form.Item>
+          </>
+        );
+
+      case "skill":
+        return (
+          <>
+            <Form.Item label="Skill" name="title" hasFeedback>
+              <Input placeholder="e.g. JavaScript" />
+            </Form.Item>
+
+            <Form.Item label="Proficiency" name="proficiency" hasFeedback>
+              <Input placeholder="e.g. Expert" />
+            </Form.Item>
+          </>
+        );
+
+      default:
+        return (
+          <p>No context or invalid context provided... (context: {context})</p>
+        );
+    }
+  };
+
   return (
-    <Modal title="Edit Card" open={open} onOk={handleOk} onCancel={handleClose}>
+    <Modal
+      title={`Edit ${context || "card"}`}
+      open={open}
+      onOk={handleOk}
+      onCancel={handleClose}
+    >
       <Form
         name={`edit-card-form-id-${data.id}`}
         layout="vertical"
@@ -31,21 +100,7 @@ const EditCardModal = ({ open, setOpen, data, setData }) => {
         }}
         onFinish={onSubmit}
       >
-        <Form.Item label="Title" name="title" hasFeedback>
-          <Input placeholder="e.g. Web Developer" />
-        </Form.Item>
-
-        <Form.Item label="Institution" name="institution" hasFeedback>
-          <Input placeholder="e.g. Google" />
-        </Form.Item>
-
-        <Form.Item label="Start year" name="startYear" hasFeedback>
-          <Input placeholder="e.g. 2019" />
-        </Form.Item>
-
-        <Form.Item label="End year" name="endYear" hasFeedback>
-          <Input placeholder="e.g. Present" />
-        </Form.Item>
+        {createFields(context)}
       </Form>
     </Modal>
   );
