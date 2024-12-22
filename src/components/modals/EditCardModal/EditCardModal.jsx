@@ -34,6 +34,18 @@ const EditCardModal = ({ open, setOpen, data, setData }) => {
         <Form.Item label="Title" name="title" hasFeedback>
           <Input placeholder="e.g. Web Developer" />
         </Form.Item>
+
+        <Form.Item label="Institution" name="institution" hasFeedback>
+          <Input placeholder="e.g. Google" />
+        </Form.Item>
+
+        <Form.Item label="Start year" name="startYear" hasFeedback>
+          <Input placeholder="e.g. 2019" />
+        </Form.Item>
+
+        <Form.Item label="End year" name="endYear" hasFeedback>
+          <Input placeholder="e.g. Present" />
+        </Form.Item>
       </Form>
     </Modal>
   );
