@@ -4,8 +4,9 @@ import { MdBusinessCenter } from "react-icons/md";
 import FormSection from "../FormSection/FormSection";
 import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
+import { useState } from "react";
 
-const educationEntries = [
+const initialEducationEntries = [
   {
     id: 1,
     title: "Bachelor of Science in Computer Science",
@@ -48,6 +49,10 @@ const workEntries = [
 ];
 
 const ResumeForm = () => {
+  const [educationEntries, setEducationEntries] = useState(
+    initialEducationEntries
+  );
+
   return (
     <Form name="resume-form" className="resume-form" layout="vertical">
       <FormSection icon={<FaUser />} title="Personal Information">
@@ -75,7 +80,11 @@ const ResumeForm = () => {
       </FormSection>
 
       <FormSection icon={<FaGraduationCap />} title="Education">
-        <DragCardsInput entries={educationEntries} context="education" />
+        <DragCardsInput
+          entries={educationEntries}
+          setEntries={setEducationEntries}
+          context="education"
+        />
       </FormSection>
 
       <FormSection icon={<MdBusinessCenter />} title="Work experience">
