@@ -24,7 +24,7 @@ const DragCard = ({ context, data, setData }) => {
           <div className="drag-card-title">{data.title}</div>
           <div className="drag-card-description">
             {context === "skill" ? (
-              <Rate defaultValue={data.description} disabled />
+              <Rate value={data.description} disabled />
             ) : (
               data.description
             )}
