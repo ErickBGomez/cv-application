@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Rate, Popconfirm } from "antd";
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { MdDragIndicator, MdClose } from "react-icons/md";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import "./DragCard.scss";
@@ -51,7 +52,9 @@ const DragCard = ({ context, data, setData }) => {
           title={`Delete this ${context}?`}
           description={`Are you sure to delete this ${context}?`}
           okText="Yes"
+          okType="danger"
           cancelText="No"
+          icon={<ExclamationCircleOutlined style={{ color: "red" }} />}
           onConfirm={handleDeleteCard}
           onClick={handleAvoidPropagation}
           onCancel={handleAvoidPropagation}
