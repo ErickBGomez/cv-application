@@ -13,7 +13,7 @@ const DragCard = ({ context, data, setData }) => {
   };
 
   const handleDeleteCard = (e) => {
-    e.stopPropagation();
+    setData((prevData) => prevData.filter((item) => item.id !== data.id));
   };
 
   const handleAvoidPropagation = (e) => {
