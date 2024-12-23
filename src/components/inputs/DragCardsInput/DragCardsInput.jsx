@@ -14,7 +14,9 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
             setData={setEntries}
           />
         ))}
-      <Button icon={<PlusOutlined />}>Add {context}</Button>
+      <Button icon={<PlusOutlined />} type="primary">
+        Add {context}
+      </Button>
     </>
   );
 };

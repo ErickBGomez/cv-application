@@ -94,6 +94,9 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       open={open}
       onOk={handleOk}
       onCancel={handleClose}
+      centered
+      closable={false}
+      maskClosable={false}
     >
       <Form
         name={`edit-card-form-${context}-${data.id}`}
