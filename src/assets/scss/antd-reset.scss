@@ -12,3 +12,11 @@
 .ant-rate {
   color: colors.$primary;
 }
+
+.ant-modal-footer {
+  display: flex;
+
+  button {
+    flex: 1;
+  }
+}

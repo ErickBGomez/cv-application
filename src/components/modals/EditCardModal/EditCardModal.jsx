@@ -15,12 +15,13 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
   };
 
   const handleClose = () => {
+    form.resetFields();
     setOpen(false);
   };
 
   const handleOk = () => {
     form.submit();
-    handleClose();
+    setOpen(false);
   };
 
   const createFields = (context) => {
@@ -58,13 +59,14 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
               <Input placeholder="e.g. Google" />
             </Form.Item>
 
-            <Form.Item label="Start year" name="startYear">
-              <Input placeholder="e.g. 2019" />
-            </Form.Item>
-
-            <Form.Item label="End year" name="endYear">
-              <Input placeholder="e.g. Present" />
-            </Form.Item>
+            <div className="years">
+              <Form.Item label="Start year" name="startYear">
+                <Input placeholder="e.g. 2019" />
+              </Form.Item>
+              <Form.Item label="End year" name="endYear">
+                <Input placeholder="e.g. Present" />
+              </Form.Item>
+            </div>
           </>
         );
 
@@ -97,6 +99,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       centered
       closable={false}
       maskClosable={false}
+      width={380}
     >
       <Form
         name={`edit-card-form-${context}-${data.id}`}
