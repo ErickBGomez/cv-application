@@ -14,7 +14,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
     );
   };
 
-  const handleClose = () => {
+  const handleCancel = () => {
     form.resetFields();
     setOpen(false);
   };
@@ -29,7 +29,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       case "education":
         return (
           <>
-            <Form.Item label="Title" name="title">
+            <Form.Item label="Education" name="title">
               <Input placeholder="e.g. Bachelor in Computer Science" />
             </Form.Item>
 
@@ -51,7 +51,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       case "work experience":
         return (
           <>
-            <Form.Item label="Title" name="title">
+            <Form.Item label="Position" name="title">
               <Input placeholder="e.g. Web Developer" />
             </Form.Item>
 
@@ -95,7 +95,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       title={`Edit ${context || "card"}`}
       open={open}
       onOk={handleOk}
-      onCancel={handleClose}
+      onCancel={handleCancel}
       centered
       closable={false}
       maskClosable={false}
