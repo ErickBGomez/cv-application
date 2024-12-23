@@ -1,4 +1,5 @@
 import { Modal, Form, Input, Rate } from "antd";
+import "./EditCardModal.scss";
 
 const EditCardModal = ({ context, open, setOpen, data, setData }) => {
   const [form] = Form.useForm();
@@ -35,13 +36,14 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
               <Input placeholder="e.g. University of Miami" />
             </Form.Item>
 
-            <Form.Item label="Start year" name="startYear" hasFeedback>
-              <Input placeholder="e.g. 2019" />
-            </Form.Item>
-
-            <Form.Item label="End year" name="endYear" hasFeedback>
-              <Input placeholder="e.g. 2024" />
-            </Form.Item>
+            <div className="years">
+              <Form.Item label="Start year" name="startYear" hasFeedback>
+                <Input placeholder="e.g. 2019" />
+              </Form.Item>
+              <Form.Item label="End year" name="endYear" hasFeedback>
+                <Input placeholder="e.g. 2024" />
+              </Form.Item>
+            </div>
           </>
         );
 
@@ -96,6 +98,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       <Form
         name={`edit-card-form-${context}-${data.id}`}
         layout="vertical"
+        className="edit-card-form"
         form={form}
         initialValues={{
           title: data.title,
@@ -105,7 +108,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
         }}
         onFinish={onSubmit}
       >
-        {createFields(context)}
+        <div className="inputs">{createFields(context)}</div>
       </Form>
     </Modal>
   );
