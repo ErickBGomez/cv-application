@@ -22,6 +22,7 @@ const EditCardModal = ({
           ...values,
         },
       ]);
+      if (mode === "create") form.resetFields();
       return;
     }
 

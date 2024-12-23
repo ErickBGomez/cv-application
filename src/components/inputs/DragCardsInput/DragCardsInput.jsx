@@ -17,6 +17,7 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
         context={context}
         open={modalOpen}
         setOpen={setModalOpen}
+        setData={setEntries}
       />
       {entries &&
         entries.map((entry) => (
