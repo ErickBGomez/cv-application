@@ -23,7 +23,7 @@ const initialEducationEntries = [
   },
 ];
 
-const workEntries = [
+const initialWorkEntries = [
   {
     id: 1,
     title: "Web Developer",
@@ -40,7 +40,7 @@ const workEntries = [
   },
 ];
 
-const skillEntries = [
+const initialSkillEntries = [
   {
     id: 1,
     title: "JavaScript",
@@ -62,6 +62,8 @@ const ResumeForm = () => {
   const [educationEntries, setEducationEntries] = useState(
     initialEducationEntries
   );
+  const [workEntries, setWorkEntries] = useState(initialWorkEntries);
+  const [skillEntries, setSkillEntries] = useState(initialSkillEntries);
 
   return (
     <Form name="resume-form" className="resume-form" layout="vertical">
@@ -98,11 +100,19 @@ const ResumeForm = () => {
       </FormSection>
 
       <FormSection icon={<MdBusinessCenter />} title="Work experience">
-        <DragCardsInput entries={workEntries} context="work experience" />
+        <DragCardsInput
+          entries={workEntries}
+          setEntries={setWorkEntries}
+          context="work experience"
+        />
       </FormSection>
 
       <FormSection icon={<MdStar />} title="Skills">
-        <DragCardsInput entries={skillEntries} context="skill" />
+        <DragCardsInput
+          entries={skillEntries}
+          setEntries={setSkillEntries}
+          context="skill"
+        />
       </FormSection>
     </Form>
   );

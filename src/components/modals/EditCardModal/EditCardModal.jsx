@@ -1,9 +1,11 @@
-import { Modal, Form, Input, Descriptions } from "antd";
+import { Modal, Form, Input, Rate } from "antd";
 
 const EditCardModal = ({ context, open, setOpen, data, setData }) => {
   const [form] = Form.useForm();
 
   const onSubmit = (values) => {
+    console.log(values);
+
     // Update current data, without mutating the rest of entries
     // Use spread operator to only change the present data in the modal form
     setData((prev) =>
@@ -72,7 +74,7 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
             </Form.Item>
 
             <Form.Item label="Proficiency" name="description" hasFeedback>
-              <Input placeholder="e.g. Expert" />
+              <Rate />
             </Form.Item>
           </>
         );
