@@ -68,25 +68,25 @@ const ResumeForm = () => {
   return (
     <Form name="resume-form" className="resume-form" layout="vertical">
       <FormSection icon={<FaUser />} title="Personal Information">
-        <Form.Item label="Full name" name="fullName" hasFeedback>
+        <Form.Item label="Full name" name="fullName">
           <Input placeholder="e.g. John Doe" />
         </Form.Item>
 
-        <Form.Item label="Work position" name="workPosition" hasFeedback>
+        <Form.Item label="Work position" name="workPosition">
           <Input placeholder="e.g. Web developer" />
         </Form.Item>
       </FormSection>
 
       <FormSection icon={<FaPhoneAlt />} title="Contact">
-        <Form.Item label="Email" name="email" hasFeedback>
+        <Form.Item label="Email" name="email">
           <Input placeholder="e.g. johndoe@domain.com" />
         </Form.Item>
 
-        <Form.Item label="Phone number" name="phoneNumber" hasFeedback>
+        <Form.Item label="Phone number" name="phoneNumber">
           <Input placeholder="e.g. 1234-5678" />
         </Form.Item>
 
-        <Form.Item label="Location" name="location" hasFeedback>
+        <Form.Item label="Location" name="location">
           <Input placeholder="e.g. Miami, Florida, USA" />
         </Form.Item>
       </FormSection>

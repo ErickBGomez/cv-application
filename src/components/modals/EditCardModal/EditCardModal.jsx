@@ -28,19 +28,19 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       case "education":
         return (
           <>
-            <Form.Item label="Title" name="title" hasFeedback>
+            <Form.Item label="Title" name="title">
               <Input placeholder="e.g. Bachelor in Computer Science" />
             </Form.Item>
 
-            <Form.Item label="Institution" name="description" hasFeedback>
+            <Form.Item label="Institution" name="description">
               <Input placeholder="e.g. University of Miami" />
             </Form.Item>
 
             <div className="years">
-              <Form.Item label="Start year" name="startYear" hasFeedback>
+              <Form.Item label="Start year" name="startYear">
                 <Input placeholder="e.g. 2019" />
               </Form.Item>
-              <Form.Item label="End year" name="endYear" hasFeedback>
+              <Form.Item label="End year" name="endYear">
                 <Input placeholder="e.g. 2024" />
               </Form.Item>
             </div>
@@ -50,19 +50,19 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       case "work experience":
         return (
           <>
-            <Form.Item label="Title" name="title" hasFeedback>
+            <Form.Item label="Title" name="title">
               <Input placeholder="e.g. Web Developer" />
             </Form.Item>
 
-            <Form.Item label="Company" name="description" hasFeedback>
+            <Form.Item label="Company" name="description">
               <Input placeholder="e.g. Google" />
             </Form.Item>
 
-            <Form.Item label="Start year" name="startYear" hasFeedback>
+            <Form.Item label="Start year" name="startYear">
               <Input placeholder="e.g. 2019" />
             </Form.Item>
 
-            <Form.Item label="End year" name="endYear" hasFeedback>
+            <Form.Item label="End year" name="endYear">
               <Input placeholder="e.g. Present" />
             </Form.Item>
           </>
@@ -71,11 +71,11 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
       case "skill":
         return (
           <>
-            <Form.Item label="Skill" name="title" hasFeedback>
+            <Form.Item label="Skill" name="title">
               <Input placeholder="e.g. JavaScript" />
             </Form.Item>
 
-            <Form.Item label="Proficiency" name="description" hasFeedback>
+            <Form.Item label="Proficiency" name="description">
               <Rate />
             </Form.Item>
           </>
