@@ -7,13 +7,17 @@ import { useState } from "react";
 const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
   const [modalOpen, setModalOpen] = useState(false);
 
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
   return (
     <>
-      {/* <EditCardModal
+      <EditCardModal
         context={context}
         open={modalOpen}
         setOpen={setModalOpen}
-      /> */}
+      />
       {entries &&
         entries.map((entry) => (
           <DragCard
@@ -23,7 +27,9 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
             setData={setEntries}
           />
         ))}
-      <Button icon={<PlusOutlined />}>Add {context}</Button>
+      <Button icon={<PlusOutlined />} onClick={handleOpenModal}>
+        Add {context}
+      </Button>
     </>
   );
 };

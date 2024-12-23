@@ -13,6 +13,7 @@ const EditCardModal = ({
   const [form] = Form.useForm();
 
   const onSubmit = (values) => {
+    // Create new data entry in create mode
     if (mode === "create") {
       setData((prev) => [
         ...prev,
@@ -24,7 +25,7 @@ const EditCardModal = ({
       return;
     }
 
-    // Update current data, without mutating the rest of entries
+    // Update current data in edit mode, without mutating the rest of entries
     // Use spread operator to only change the present data in the modal form
     if (mode === "edit") {
       setData((prev) =>
@@ -46,6 +47,7 @@ const EditCardModal = ({
     setOpen(false);
   };
 
+  // Create fields based on the context provided
   const createFields = (context) => {
     switch (context) {
       case "education":
@@ -114,9 +116,11 @@ const EditCardModal = ({
 
   return (
     <Modal
+      // Set the title based on the mode and context
       title={`${capitalize(mode)} ${context || "card"}`}
       open={open}
       onOk={handleOk}
+      // Set the text of the OK button based on the mode
       okText={mode === "edit" ? "Save" : capitalize(mode)}
       onCancel={handleCancel}
       centered
@@ -125,16 +129,27 @@ const EditCardModal = ({
       width={380}
     >
       <Form
-        name={`edit-card-form-${context}-${data.id}`}
+        // Set the form name based on the mode and context
+        name={
+          mode === "edit"
+            ? `edit-card-form-${context}-${data.id}`
+            : `create-card-form-${context}`
+        }
         layout="vertical"
-        className="edit-card-form"
+        className="card-form"
         form={form}
-        initialValues={{
-          title: data.title,
-          description: data.description,
-          startYear: data.startYear,
-          endYear: data.endYear,
-        }}
+        // Set the initial values based on the data provided
+        // If no data is provided, set the initial values to null
+        initialValues={
+          data
+            ? {
+                title: data.title,
+                description: data.description,
+                startYear: data.startYear,
+                endYear: data.endYear,
+              }
+            : null
+        }
         onFinish={onSubmit}
       >
         <div className="inputs">{createFields(context)}</div>
