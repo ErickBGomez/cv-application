@@ -1,5 +1,6 @@
 import { Modal, Form, Input, Rate } from "antd";
 import "./EditCardModal.scss";
+import { capitalize } from "../../../helpers/strings";
 
 const EditCardModal = ({
   context,
@@ -113,11 +114,10 @@ const EditCardModal = ({
 
   return (
     <Modal
-      title={`${mode.charAt(0).toUpperCase() + mode.slice(1)} ${
-        context || "card"
-      }`}
+      title={`${capitalize(mode)} ${context || "card"}`}
       open={open}
       onOk={handleOk}
+      okText={mode === "edit" ? "Save" : capitalize(mode)}
       onCancel={handleCancel}
       centered
       closable={false}
