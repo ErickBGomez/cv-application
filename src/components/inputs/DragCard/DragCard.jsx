@@ -1,11 +1,23 @@
-import { MdDragIndicator } from "react-icons/md";
+import { useState } from "react";
+import { Rate, Popconfirm } from "antd";
+import { MdDragIndicator, MdClose } from "react-icons/md";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import "./DragCard.scss";
-import { useState } from "react";
-import { Rate } from "antd";
 
 const DragCard = ({ context, data, setData }) => {
   const [modalOpen, setModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
+
+  const handleDeleteCard = (e) => {
+    e.stopPropagation();
+  };
+
+  const handleAvoidPropagation = (e) => {
+    e.stopPropagation();
+  };
 
   return (
     <>
@@ -16,7 +28,7 @@ const DragCard = ({ context, data, setData }) => {
         data={data}
         setData={setData}
       />
-      <div className="drag-card" onClick={() => setModalOpen(true)}>
+      <div className="drag-card" onClick={handleOpenModal}>
         <div className="drag-indicator">
           <MdDragIndicator />
         </div>
@@ -35,6 +47,19 @@ const DragCard = ({ context, data, setData }) => {
             </div>
           )}
         </div>
+        <Popconfirm
+          title={`Delete this ${context}?`}
+          description={`Are you sure to delete this ${context}?`}
+          okText="Yes"
+          cancelText="No"
+          onConfirm={handleDeleteCard}
+          onClick={handleAvoidPropagation}
+          onCancel={handleAvoidPropagation}
+        >
+          <div className="delete-card">
+            <MdClose />
+          </div>
+        </Popconfirm>
       </div>
     </>
   );
