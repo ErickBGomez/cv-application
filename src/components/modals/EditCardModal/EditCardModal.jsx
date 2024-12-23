@@ -1,17 +1,38 @@
 import { Modal, Form, Input, Rate } from "antd";
 import "./EditCardModal.scss";
 
-const EditCardModal = ({ context, open, setOpen, data, setData }) => {
+const EditCardModal = ({
+  context,
+  open,
+  setOpen,
+  data,
+  setData,
+  mode = "create",
+}) => {
   const [form] = Form.useForm();
 
   const onSubmit = (values) => {
-    console.log(values);
+    if (mode === "create") {
+      setData((prev) => [
+        ...prev,
+        {
+          id: prev.length + 1,
+          ...values,
+        },
+      ]);
+      return;
+    }
 
     // Update current data, without mutating the rest of entries
     // Use spread operator to only change the present data in the modal form
-    setData((prev) =>
-      prev.map((item) => (item.id === data.id ? { ...data, ...values } : item))
-    );
+    if (mode === "edit") {
+      setData((prev) =>
+        prev.map((item) =>
+          item.id === data.id ? { ...data, ...values } : item
+        )
+      );
+      return;
+    }
   };
 
   const handleCancel = () => {
@@ -92,7 +113,9 @@ const EditCardModal = ({ context, open, setOpen, data, setData }) => {
 
   return (
     <Modal
-      title={`Edit ${context || "card"}`}
+      title={`${mode.charAt(0).toUpperCase() + mode.slice(1)} ${
+        context || "card"
+      }`}
       open={open}
       onOk={handleOk}
       onCancel={handleCancel}

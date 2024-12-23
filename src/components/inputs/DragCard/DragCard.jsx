@@ -23,6 +23,7 @@ const DragCard = ({ context, data, setData }) => {
   return (
     <>
       <EditCardModal
+        mode="edit"
         context={context}
         open={modalOpen}
         setOpen={setModalOpen}
