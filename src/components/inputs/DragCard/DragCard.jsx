@@ -2,6 +2,7 @@ import { MdDragIndicator } from "react-icons/md";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import "./DragCard.scss";
 import { useState } from "react";
+import { Rate } from "antd";
 
 const DragCard = ({ context, data, setData }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -21,7 +22,13 @@ const DragCard = ({ context, data, setData }) => {
         </div>
         <div className="content">
           <div className="drag-card-title">{data.title}</div>
-          <div className="drag-card-description">{data.description}</div>
+          <div className="drag-card-description">
+            {context === "skill" ? (
+              <Rate defaultValue={data.description} disabled />
+            ) : (
+              data.description
+            )}
+          </div>
           {data.startYear && data.endYear && (
             <div className="drag-card-smalltext">
               {data.startYear} - {data.endYear}

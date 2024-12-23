@@ -1,6 +1,6 @@
 import { Form, Input } from "antd";
 import { FaUser, FaPhoneAlt, FaGraduationCap } from "react-icons/fa";
-import { MdBusinessCenter } from "react-icons/md";
+import { MdBusinessCenter, MdStar } from "react-icons/md";
 import FormSection from "../FormSection/FormSection";
 import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
@@ -37,6 +37,24 @@ const workEntries = [
     description: "Facebook",
     startYear: "2018",
     endYear: "2019",
+  },
+];
+
+const skillEntries = [
+  {
+    id: 1,
+    title: "JavaScript",
+    description: 1,
+  },
+  {
+    id: 2,
+    title: "React",
+    description: 2,
+  },
+  {
+    id: 3,
+    title: "Python",
+    description: 3,
   },
 ];
 
@@ -81,6 +99,10 @@ const ResumeForm = () => {
 
       <FormSection icon={<MdBusinessCenter />} title="Work experience">
         <DragCardsInput entries={workEntries} context="work experience" />
+      </FormSection>
+
+      <FormSection icon={<MdStar />} title="Skills">
+        <DragCardsInput entries={skillEntries} context="skill" />
       </FormSection>
     </Form>
   );
