@@ -3,17 +3,9 @@ import { PlusOutlined } from "@ant-design/icons";
 import DragCard from "../DragCard/DragCard";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import { useState } from "react";
-import { useDrop } from "react-dnd";
 
 const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [{ isOver }, drop] = useDrop(() => ({
-    accept: context,
-    drop: () => console.log("dropped"),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  }));
 
   const handleOpenModal = () => {
     setModalOpen(true);

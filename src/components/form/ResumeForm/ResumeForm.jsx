@@ -5,8 +5,6 @@ import FormSection from "../FormSection/FormSection";
 import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
 import { useState } from "react";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
 
 const initialEducationEntries = [
   {
@@ -68,57 +66,55 @@ const ResumeForm = () => {
   const [skillEntries, setSkillEntries] = useState(initialSkillEntries);
 
   return (
-    <DndProvider backend={HTML5Backend}>
-      <Form name="resume-form" className="resume-form" layout="vertical">
-        <FormSection icon={<FaUser />} title="Personal Information">
-          <Form.Item label="Full name" name="fullName">
-            <Input placeholder="e.g. John Doe" />
-          </Form.Item>
+    <Form name="resume-form" className="resume-form" layout="vertical">
+      <FormSection icon={<FaUser />} title="Personal Information">
+        <Form.Item label="Full name" name="fullName">
+          <Input placeholder="e.g. John Doe" />
+        </Form.Item>
 
-          <Form.Item label="Work position" name="workPosition">
-            <Input placeholder="e.g. Web developer" />
-          </Form.Item>
-        </FormSection>
+        <Form.Item label="Work position" name="workPosition">
+          <Input placeholder="e.g. Web developer" />
+        </Form.Item>
+      </FormSection>
 
-        <FormSection icon={<FaPhoneAlt />} title="Contact">
-          <Form.Item label="Email" name="email">
-            <Input placeholder="e.g. johndoe@domain.com" />
-          </Form.Item>
+      <FormSection icon={<FaPhoneAlt />} title="Contact">
+        <Form.Item label="Email" name="email">
+          <Input placeholder="e.g. johndoe@domain.com" />
+        </Form.Item>
 
-          <Form.Item label="Phone number" name="phoneNumber">
-            <Input placeholder="e.g. 1234-5678" />
-          </Form.Item>
+        <Form.Item label="Phone number" name="phoneNumber">
+          <Input placeholder="e.g. 1234-5678" />
+        </Form.Item>
 
-          <Form.Item label="Location" name="location">
-            <Input placeholder="e.g. Miami, Florida, USA" />
-          </Form.Item>
-        </FormSection>
+        <Form.Item label="Location" name="location">
+          <Input placeholder="e.g. Miami, Florida, USA" />
+        </Form.Item>
+      </FormSection>
 
-        <FormSection icon={<FaGraduationCap />} title="Education">
-          <DragCardsInput
-            entries={educationEntries}
-            setEntries={setEducationEntries}
-            context="education"
-          />
-        </FormSection>
+      <FormSection icon={<FaGraduationCap />} title="Education">
+        <DragCardsInput
+          entries={educationEntries}
+          setEntries={setEducationEntries}
+          context="education"
+        />
+      </FormSection>
 
-        <FormSection icon={<MdBusinessCenter />} title="Work experience">
-          <DragCardsInput
-            entries={workEntries}
-            setEntries={setWorkEntries}
-            context="work experience"
-          />
-        </FormSection>
+      <FormSection icon={<MdBusinessCenter />} title="Work experience">
+        <DragCardsInput
+          entries={workEntries}
+          setEntries={setWorkEntries}
+          context="work experience"
+        />
+      </FormSection>
 
-        <FormSection icon={<MdStar />} title="Skills">
-          <DragCardsInput
-            entries={skillEntries}
-            setEntries={setSkillEntries}
-            context="skill"
-          />
-        </FormSection>
-      </Form>
-    </DndProvider>
+      <FormSection icon={<MdStar />} title="Skills">
+        <DragCardsInput
+          entries={skillEntries}
+          setEntries={setSkillEntries}
+          context="skill"
+        />
+      </FormSection>
+    </Form>
   );
 };
 
