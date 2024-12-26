@@ -4,9 +4,16 @@ import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { MdDragIndicator, MdClose } from "react-icons/md";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import "./DragCard.scss";
+import { useDrag } from "react-dnd";
 
 const DragCard = ({ context, data, setData }) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: context,
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -34,7 +41,7 @@ const DragCard = ({ context, data, setData }) => {
         <div className="drag-indicator">
           <MdDragIndicator />
         </div>
-        <div className="content">
+        <div className="content" ref={drag}>
           <div className="drag-card-title">{data.title}</div>
           <div className="drag-card-description">
             {context === "skill" ? (
