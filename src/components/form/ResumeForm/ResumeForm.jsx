@@ -4,6 +4,12 @@ import { MdBusinessCenter, MdStar } from "react-icons/md";
 import FormSection from "../FormSection/FormSection";
 import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
+import {
+  fullnameValidator,
+  workPositionValidator,
+  emailValidator,
+  phoneNumberValidator,
+} from "../../../helpers/form-validators/resume-form-validators";
 
 const ResumeForm = () => {
   const handleSubmit = (values) => {
@@ -18,21 +24,29 @@ const ResumeForm = () => {
       onFinish={handleSubmit}
     >
       <FormSection icon={<FaUser />} title="Personal Information">
-        <Form.Item label="Full name" name="fullName">
+        <Form.Item label="Full name" name="fullName" rules={fullnameValidator}>
           <Input placeholder="e.g. John Doe" />
         </Form.Item>
 
-        <Form.Item label="Work position" name="workPosition">
+        <Form.Item
+          label="Work position"
+          name="workPosition"
+          rules={workPositionValidator}
+        >
           <Input placeholder="e.g. Web developer" />
         </Form.Item>
       </FormSection>
 
       <FormSection icon={<FaPhoneAlt />} title="Contact">
-        <Form.Item label="Email" name="email">
+        <Form.Item label="Email" name="email" rules={emailValidator}>
           <Input placeholder="e.g. johndoe@domain.com" />
         </Form.Item>
 
-        <Form.Item label="Phone number" name="phoneNumber">
+        <Form.Item
+          label="Phone number"
+          name="phoneNumber"
+          rules={phoneNumberValidator}
+        >
           <Input placeholder="e.g. 1234-5678" />
         </Form.Item>
 
