@@ -1,12 +1,12 @@
 import { Modal, Form, Input, Rate } from "antd";
-import "./EditCardModal.scss";
+import "./CardModal.scss";
 import * as commonValidator from "../../../helpers/form-validators/common-validators";
 import * as educationValidator from "../../../helpers/form-validators/education-modal-validators";
 import * as workValidator from "../../../helpers/form-validators/work-experience-modal-validators";
 import * as skillValidator from "../../../helpers/form-validators/skills-modal-validators";
 import { capitalize } from "../../../helpers/strings";
 
-const EditCardModal = ({
+const CardModal = ({
   context,
   open,
   setOpen,
@@ -203,4 +203,4 @@ const EditCardModal = ({
   );
 };
 
-export default EditCardModal;
+export default CardModal;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Rate, Popconfirm } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { MdDragIndicator, MdClose } from "react-icons/md";
-import EditCardModal from "../../modals/EditCardModal/EditCardModal";
+import CardModal from "../../modals/CardModal/CardModal";
 import "./DragCard.scss";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
@@ -40,7 +40,7 @@ const DragCard = ({ context, data, setData }) => {
 
   return (
     <>
-      <EditCardModal
+      <CardModal
         mode="edit"
         context={context}
         open={modalOpen}

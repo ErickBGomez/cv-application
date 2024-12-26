@@ -9,7 +9,7 @@ import {
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
-import EditCardModal from "../../modals/EditCardModal/EditCardModal";
+import CardModal from "../../modals/CardModal/CardModal";
 import DragCard from "../DragCard/DragCard";
 import "./DragCardsInput.scss";
 
@@ -53,7 +53,7 @@ const DragCardsInput = ({ onChange, context = "card" }) => {
 
   return (
     <div className="cards-container">
-      <EditCardModal
+      <CardModal
         context={context}
         open={modalOpen}
         setOpen={setModalOpen}
