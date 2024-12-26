@@ -4,16 +4,26 @@ import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { MdDragIndicator, MdClose } from "react-icons/md";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import "./DragCard.scss";
+import { useSortable } from "@dnd-kit/sortable";
+import { CSS } from "@dnd-kit/utilities";
 
 const DragCard = ({ context, data, setData }) => {
+  const { id, title, description, startYear, endYear } = data;
   const [modalOpen, setModalOpen] = useState(false);
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+  };
 
   const handleOpenModal = () => {
     setModalOpen(true);
   };
 
   const handleDeleteCard = (e) => {
-    setData((prevData) => prevData.filter((item) => item.id !== data.id));
+    setData((prevData) => prevData.filter((item) => item.id !== id));
   };
 
   const handleAvoidPropagation = (e) => {
@@ -30,22 +40,29 @@ const DragCard = ({ context, data, setData }) => {
         data={data}
         setData={setData}
       />
-      <div className="drag-card" onClick={handleOpenModal}>
+      <div
+        className="drag-card"
+        onClick={handleOpenModal}
+        ref={setNodeRef}
+        {...attributes}
+        {...listeners}
+        style={style}
+      >
         <div className="drag-indicator">
           <MdDragIndicator />
         </div>
         <div className="content">
-          <div className="drag-card-title">{data.title}</div>
+          <div className="drag-card-title">{title}</div>
           <div className="drag-card-description">
             {context === "skill" ? (
-              <Rate value={data.description} disabled />
+              <Rate value={description} disabled />
             ) : (
-              data.description
+              description
             )}
           </div>
-          {data.startYear && data.endYear && (
+          {startYear && endYear && (
             <div className="drag-card-smalltext">
-              {data.startYear} - {data.endYear}
+              {startYear} - {endYear}
             </div>
           )}
         </div>
