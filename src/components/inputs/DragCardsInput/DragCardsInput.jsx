@@ -5,6 +5,7 @@ import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import { useState } from "react";
 import { DndContext } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
+import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 
 const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -35,7 +36,10 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
         setOpen={setModalOpen}
         setData={setEntries}
       />
-      <DndContext onDragEnd={handleDragEnd}>
+      <DndContext
+        modifiers={[restrictToVerticalAxis]}
+        onDragEnd={handleDragEnd}
+      >
         <SortableContext items={entries}>
           {entries &&
             entries.map((entry) => (
