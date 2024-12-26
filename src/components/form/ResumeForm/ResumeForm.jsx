@@ -60,7 +60,7 @@ const ResumeForm = () => {
       </FormSection>
 
       <Form.Item label={null}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" className="submit-button">
           Submit
         </Button>
       </Form.Item>
