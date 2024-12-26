@@ -3,12 +3,24 @@ import { PlusOutlined } from "@ant-design/icons";
 import DragCard from "../DragCard/DragCard";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import { useState } from "react";
-import { DndContext } from "@dnd-kit/core";
+import {
+  DndContext,
+  PointerSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 
 const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 5,
+      },
+    })
+  );
 
   const handleOpenModal = () => {
     setModalOpen(true);
@@ -37,6 +49,7 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
         setData={setEntries}
       />
       <DndContext
+        sensors={sensors}
         modifiers={[restrictToVerticalAxis]}
         onDragEnd={handleDragEnd}
       >
