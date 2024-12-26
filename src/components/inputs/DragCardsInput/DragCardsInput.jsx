@@ -12,7 +12,8 @@ import {
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 
-const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
+const DragCardsInput = ({ context = "card" }) => {
+  const [entries, setEntries] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const sensors = useSensors(
     useSensor(PointerSensor, {
