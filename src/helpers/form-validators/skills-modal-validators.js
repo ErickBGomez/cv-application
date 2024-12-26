@@ -1,8 +1,8 @@
-export const skillsValidator = [
+export const skillRules = [
   { required: true, message: "Skills field is required" },
 ];
 
-export const rateValidator = [
+export const rateRules = [
   { required: true, message: "Rate is required" },
   ({ getFieldValue }) => ({
     validator(_, value) {

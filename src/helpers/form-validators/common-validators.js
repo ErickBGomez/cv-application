@@ -1,16 +1,16 @@
-export const startYearValidator = [
+export const startYearRules = [
   { required: true, message: "Start year is required" },
   {
     pattern: /^[0-9]{4}$/,
-    message: "Start year must be a valid year (e.g., 2021)",
+    message: "Start year must be a valid year (e.g., 2019)",
   },
 ];
 
-export const endYearValidator = [
+export const endYearRules = [
   { required: true, message: "End year is required" },
   {
     pattern: /^[0-9]{4}$/,
-    message: "End year must be a valid year (e.g., 2021)",
+    message: "End year must be a valid year (e.g., 2024)",
   },
   ({ getFieldValue }) => ({
     validator(_, value) {

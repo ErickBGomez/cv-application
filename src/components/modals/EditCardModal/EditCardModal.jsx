@@ -1,18 +1,9 @@
 import { Modal, Form, Input, Rate } from "antd";
 import "./EditCardModal.scss";
-import {
-  startYearValidator,
-  endYearValidator,
-} from "../../../helpers/form-validators/common-validators";
-import {
-  educationValidator,
-  institutionValidator,
-} from "../../../helpers/form-validators/education-modal-validators";
-import {
-  workExperienceValidator,
-  companyValidator,
-} from "../../../helpers/form-validators/work-experience-modal-validators";
-import { skillValidator } from "../../../helpers/form-validators/skills-modal-validators";
+import * as commonValidator from "../../../helpers/form-validators/common-validators";
+import * as educationValidator from "../../../helpers/form-validators/education-modal-validators";
+import * as workValidator from "../../../helpers/form-validators/work-experience-modal-validators";
+import * as skillValidator from "../../../helpers/form-validators/skills-modal-validators";
 import { capitalize } from "../../../helpers/strings";
 
 const EditCardModal = ({
@@ -67,19 +58,35 @@ const EditCardModal = ({
       case "education":
         return (
           <>
-            <Form.Item label="Education" name="title">
+            <Form.Item
+              label="Education"
+              name="title"
+              rules={educationValidator.educationRules}
+            >
               <Input placeholder="e.g. Bachelor in Computer Science" />
             </Form.Item>
 
-            <Form.Item label="Institution" name="description">
+            <Form.Item
+              label="Institution"
+              name="description"
+              rules={educationValidator.institutionRules}
+            >
               <Input placeholder="e.g. University of Miami" />
             </Form.Item>
 
             <div className="years">
-              <Form.Item label="Start year" name="startYear">
+              <Form.Item
+                label="Start year"
+                name="startYear"
+                rules={commonValidator.startYearRules}
+              >
                 <Input placeholder="e.g. 2019" />
               </Form.Item>
-              <Form.Item label="End year" name="endYear">
+              <Form.Item
+                label="End year"
+                name="endYear"
+                rules={commonValidator.endYearRules}
+              >
                 <Input placeholder="e.g. 2024" />
               </Form.Item>
             </div>
@@ -89,19 +96,35 @@ const EditCardModal = ({
       case "work experience":
         return (
           <>
-            <Form.Item label="Position" name="title">
+            <Form.Item
+              label="Position"
+              name="title"
+              rules={workValidator.positionRules}
+            >
               <Input placeholder="e.g. Web Developer" />
             </Form.Item>
 
-            <Form.Item label="Company" name="description">
+            <Form.Item
+              label="Company"
+              name="description"
+              rules={workValidator.companyRules}
+            >
               <Input placeholder="e.g. Google" />
             </Form.Item>
 
             <div className="years">
-              <Form.Item label="Start year" name="startYear">
+              <Form.Item
+                label="Start year"
+                name="startYear"
+                rules={commonValidator.startYearRules}
+              >
                 <Input placeholder="e.g. 2019" />
               </Form.Item>
-              <Form.Item label="End year" name="endYear">
+              <Form.Item
+                label="End year"
+                name="endYear"
+                rules={commonValidator.endYearRules}
+              >
                 <Input placeholder="e.g. Present" />
               </Form.Item>
             </div>
@@ -111,11 +134,19 @@ const EditCardModal = ({
       case "skill":
         return (
           <>
-            <Form.Item label="Skill" name="title">
+            <Form.Item
+              label="Skill"
+              name="title"
+              rules={skillValidator.skillRules}
+            >
               <Input placeholder="e.g. JavaScript" />
             </Form.Item>
 
-            <Form.Item label="Proficiency" name="description">
+            <Form.Item
+              label="Proficiency"
+              name="description"
+              rules={skillValidator.rateRules}
+            >
               <Rate />
             </Form.Item>
           </>
