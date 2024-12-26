@@ -1,4 +1,4 @@
-import { Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
 import { FaUser, FaPhoneAlt, FaGraduationCap } from "react-icons/fa";
 import { MdBusinessCenter, MdStar } from "react-icons/md";
 import FormSection from "../FormSection/FormSection";
@@ -65,8 +65,17 @@ const ResumeForm = () => {
   // const [workEntries, setWorkEntries] = useState(initialWorkEntries);
   // const [skillEntries, setSkillEntries] = useState(initialSkillEntries);
 
+  const handleSubmit = (values) => {
+    console.log(values);
+  };
+
   return (
-    <Form name="resume-form" className="resume-form" layout="vertical">
+    <Form
+      name="resume-form"
+      className="resume-form"
+      layout="vertical"
+      onFinish={handleSubmit}
+    >
       <FormSection icon={<FaUser />} title="Personal Information">
         <Form.Item label="Full name" name="fullName">
           <Input placeholder="e.g. John Doe" />
@@ -92,16 +101,28 @@ const ResumeForm = () => {
       </FormSection>
 
       <FormSection icon={<FaGraduationCap />} title="Education">
-        <DragCardsInput context="education" />
+        <Form.Item label={null} name="education">
+          <DragCardsInput context="education" />
+        </Form.Item>
       </FormSection>
 
       <FormSection icon={<MdBusinessCenter />} title="Work experience">
-        <DragCardsInput context="work experience" />
+        <Form.Item label={null} name="workExperience">
+          <DragCardsInput context="work experience" />
+        </Form.Item>
       </FormSection>
 
       <FormSection icon={<MdStar />} title="Skills">
-        <DragCardsInput context="skill" />
+        <Form.Item label={null} name="skills">
+          <DragCardsInput context="skill" />
+        </Form.Item>
       </FormSection>
+
+      <Form.Item label={null}>
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form.Item>
     </Form>
   );
 };
