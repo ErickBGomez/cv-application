@@ -1,8 +1,6 @@
+import { useEffect, useState } from "react";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import DragCard from "../DragCard/DragCard";
-import EditCardModal from "../../modals/EditCardModal/EditCardModal";
-import { useEffect, useState } from "react";
 import {
   DndContext,
   PointerSensor,
@@ -11,11 +9,15 @@ import {
 } from "@dnd-kit/core";
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
+import EditCardModal from "../../modals/EditCardModal/EditCardModal";
+import DragCard from "../DragCard/DragCard";
 
 // Use onChange from Ant Design Form.Item to update the form values
 const DragCardsInput = ({ onChange, context = "card" }) => {
   const [entries, setEntries] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
+
+  // Set sensors to fix problem with onClick events
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
@@ -24,6 +26,7 @@ const DragCardsInput = ({ onChange, context = "card" }) => {
     })
   );
 
+  // Update form values when entries change
   useEffect(() => {
     onChange(entries);
   }, [entries]);
