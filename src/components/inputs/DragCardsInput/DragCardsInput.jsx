@@ -17,7 +17,7 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
   const handleDragEnd = (e) => {
     const { active, over } = e;
 
-    if (active.id !== over.id) {
+    if (active && over && active.id !== over.id) {
       // Swap position of the dragged item with the item it was dropped on
       setEntries((prevEntries) => {
         const oldIndex = entries.findIndex((entry) => entry.id === active.id);
