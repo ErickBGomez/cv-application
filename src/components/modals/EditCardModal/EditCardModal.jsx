@@ -1,5 +1,18 @@
 import { Modal, Form, Input, Rate } from "antd";
 import "./EditCardModal.scss";
+import {
+  startYearValidator,
+  endYearValidator,
+} from "../../../helpers/form-validators/common-validators";
+import {
+  educationValidator,
+  institutionValidator,
+} from "../../../helpers/form-validators/education-modal-validators";
+import {
+  workExperienceValidator,
+  companyValidator,
+} from "../../../helpers/form-validators/work-experience-modal-validators";
+import { skillValidator } from "../../../helpers/form-validators/skills-modal-validators";
 import { capitalize } from "../../../helpers/strings";
 
 const EditCardModal = ({
