@@ -37,11 +37,11 @@ const DragCard = ({ context, data, setData }) => {
         data={data}
         setData={setData}
       />
-      <div className="drag-card" onClick={handleOpenModal}>
+      <div className="drag-card" onClick={handleOpenModal} ref={drag}>
         <div className="drag-indicator">
           <MdDragIndicator />
         </div>
-        <div className="content" ref={drag}>
+        <div className="content">
           <div className="drag-card-title">{data.title}</div>
           <div className="drag-card-description">
             {context === "skill" ? (
