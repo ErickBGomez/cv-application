@@ -13,7 +13,7 @@ const DragCard = ({ context, data, setData }) => {
   const { attributes, listeners, setNodeRef, transform, transition } =
     useSortable({ id });
 
-  const style = {
+  const dragStyle = {
     transform: CSS.Transform.toString(transform),
     transition,
   };
@@ -46,7 +46,7 @@ const DragCard = ({ context, data, setData }) => {
         ref={setNodeRef}
         {...attributes}
         {...listeners}
-        style={style}
+        style={dragStyle}
       >
         <div className="drag-indicator">
           <MdDragIndicator />
