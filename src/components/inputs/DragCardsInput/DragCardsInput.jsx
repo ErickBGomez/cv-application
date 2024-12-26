@@ -2,7 +2,7 @@ import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import DragCard from "../DragCard/DragCard";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   DndContext,
   PointerSensor,
@@ -12,7 +12,8 @@ import {
 import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 
-const DragCardsInput = ({ context = "card" }) => {
+// Use onChange from Ant Design Form.Item to update the form values
+const DragCardsInput = ({ onChange, context = "card" }) => {
   const [entries, setEntries] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const sensors = useSensors(
@@ -22,6 +23,10 @@ const DragCardsInput = ({ context = "card" }) => {
       },
     })
   );
+
+  useEffect(() => {
+    onChange(entries);
+  }, [entries]);
 
   const handleOpenModal = () => {
     setModalOpen(true);
