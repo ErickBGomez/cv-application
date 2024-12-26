@@ -11,6 +11,7 @@ import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 import { restrictToVerticalAxis } from "@dnd-kit/modifiers";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import DragCard from "../DragCard/DragCard";
+import "./DragCardsInput.scss";
 
 // Use onChange from Ant Design Form.Item to update the form values
 const DragCardsInput = ({ onChange, context = "card" }) => {
@@ -51,7 +52,7 @@ const DragCardsInput = ({ onChange, context = "card" }) => {
   };
 
   return (
-    <>
+    <div className="cards-container">
       <EditCardModal
         context={context}
         open={modalOpen}
@@ -76,10 +77,14 @@ const DragCardsInput = ({ onChange, context = "card" }) => {
         </SortableContext>
       </DndContext>
 
-      <Button icon={<PlusOutlined />} onClick={handleOpenModal}>
+      <Button
+        icon={<PlusOutlined />}
+        onClick={handleOpenModal}
+        className="add-card-button"
+      >
         Add {context}
       </Button>
-    </>
+    </div>
   );
 };
 
