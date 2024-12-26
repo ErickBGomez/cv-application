@@ -4,7 +4,7 @@ import DragCard from "../DragCard/DragCard";
 import EditCardModal from "../../modals/EditCardModal/EditCardModal";
 import { useState } from "react";
 import { DndContext } from "@dnd-kit/core";
-import { SortableContext } from "@dnd-kit/sortable";
+import { arrayMove, SortableContext } from "@dnd-kit/sortable";
 
 const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -18,14 +18,12 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
 
     if (active.id !== over.id) {
       // Swap position of the dragged item with the item it was dropped on
-      const oldIndex = entries.findIndex((entry) => entry.id === active.id);
-      const newIndex = entries.findIndex((entry) => entry.id === over.id);
+      setEntries((prevEntries) => {
+        const oldIndex = entries.findIndex((entry) => entry.id === active.id);
+        const newIndex = entries.findIndex((entry) => entry.id === over.id);
 
-      const newEntries = [...entries];
-      newEntries.splice(oldIndex, 1);
-      newEntries.splice(newIndex, 0, entries[oldIndex]);
-
-      setEntries(newEntries);
+        return arrayMove(prevEntries, oldIndex, newIndex);
+      });
     }
   };
 
