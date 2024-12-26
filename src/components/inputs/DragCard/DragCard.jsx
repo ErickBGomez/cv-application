@@ -30,7 +30,7 @@ const DragCard = ({ context, data, setData }) => {
     setModalOpen(true);
   };
 
-  const handleDeleteCard = (e) => {
+  const handleDeleteCard = () => {
     setData((prevData) => prevData.filter((item) => item.id !== id));
   };
 

@@ -29,6 +29,7 @@ const DragCardsInput = ({ entries, setEntries, context = "card" }) => {
   const handleDragEnd = (e) => {
     const { active, over } = e;
 
+    // Avoid reordering if the dragged item is dropped on itself
     if (active && over && active.id !== over.id) {
       // Swap position of the dragged item with the item it was dropped on
       setEntries((prevEntries) => {
