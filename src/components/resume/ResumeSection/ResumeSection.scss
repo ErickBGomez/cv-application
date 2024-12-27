@@ -1,0 +1,11 @@
+@use "../../../assets/scss/colors";
+
+.title {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid colors.$black;
+}
+
+.resume-aside .title {
+  border-color: colors.$white;
+}
