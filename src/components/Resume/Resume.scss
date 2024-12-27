@@ -6,7 +6,11 @@
   background-color: colors.$white;
   border: 1px solid black;
 
-  .personal-info {
+  section .title {
+    // border-bottom: 2px solid colors.$white;
+  }
+
+  .resume-header {
     padding: 4.38rem 0;
     text-align: center;
     background-color: colors.$primary;
@@ -19,5 +23,10 @@
     .work-position {
       @include text-styles.resume-work-title;
     }
+  }
+
+  .resume-aside {
+    background-color: colors.$black;
+    color: colors.$white;
   }
 }
