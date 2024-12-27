@@ -11,6 +11,11 @@ import Resume from "./components/Resume/Resume";
 const data = {
   fullname: "Erick Gomez",
   workPosition: "Web developer",
+  about:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Aliquam in hendrerit urna. Pellentesque sit amet ",
+  email: "erickgomez@domain.com",
+  phoneNumber: "+503 1234-5678",
+  location: "San Salvador, El Salvador",
 };
 
 const App = () => {
