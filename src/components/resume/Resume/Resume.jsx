@@ -1,4 +1,6 @@
+import { MdCall, MdEmail, MdLocationOn } from "react-icons/md";
 import ResumeSection from "../ResumeSection/ResumeSection";
+import ContactInfo from "../ContactInfo/ContactInfo";
 import "./Resume.scss";
 
 const Resume = ({ data }) => {
@@ -12,7 +14,11 @@ const Resume = ({ data }) => {
       </div>
       <aside className="resume-aside">
         {about && <ResumeSection title="About">{about}</ResumeSection>}
-        <ResumeSection title="Contact"></ResumeSection>
+        <ResumeSection title="Contact">
+          <ContactInfo icon={<MdEmail />} info={email} />
+          <ContactInfo icon={<MdCall />} info={phoneNumber} />
+          {location && <ContactInfo icon={<MdLocationOn />} info={location} />}
+        </ResumeSection>
         <ResumeSection title="Skills"></ResumeSection>
       </aside>
       <div className="resume-main">

@@ -1,0 +1,8 @@
+@use "../../../assets/scss/colors";
+@use "../../../assets/scss/text-styles";
+
+.contact-info {
+  display: flex;
+  gap: 0.62rem;
+  align-items: center;
+}
