@@ -19,3 +19,22 @@ body {
   padding: 0;
   margin: 0;
 }
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  @include text-styles.heading-1;
+}
+
+h2 {
+  @include text-styles.heading-2;
+}
+
+h3 {
+  @include text-styles.heading-3;
+}
