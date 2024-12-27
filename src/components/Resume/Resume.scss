@@ -1,0 +1,23 @@
+@use "../../assets/scss/colors";
+@use "../../assets/scss/text-styles";
+
+.resume {
+  max-width: 950px;
+  background-color: colors.$white;
+  border: 1px solid black;
+
+  .personal-info {
+    padding: 4.38rem 0;
+    text-align: center;
+    background-color: colors.$primary;
+    color: colors.$white;
+
+    .fullname {
+      @include text-styles.resume-fullname-title;
+    }
+
+    .work-position {
+      @include text-styles.resume-work-title;
+    }
+  }
+}

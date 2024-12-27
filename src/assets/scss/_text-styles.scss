@@ -1,3 +1,5 @@
+// General
+
 @mixin common-styles() {
   font-style: normal;
   text-decoration: none;
@@ -35,6 +37,8 @@
   font-weight: 600;
 }
 
+// Form
+
 @mixin form-section-title() {
   @include common-styles;
   font-size: 1.25rem;
@@ -63,4 +67,17 @@
   @include common-styles;
   font-size: 1rem;
   font-weight: 600;
+}
+
+// Resume
+@mixin resume-fullname-title() {
+  @include common-styles;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+@mixin resume-work-title() {
+  @include common-styles;
+  font-size: 2.5rem;
+  font-weight: 400;
 }
