@@ -16,6 +16,11 @@ const data = {
   email: "erickgomez@domain.com",
   phoneNumber: "+503 1234-5678",
   location: "San Salvador, El Salvador",
+  skills: [
+    { title: "React", description: 5 },
+    { title: "NodeJS", description: 3 },
+    { title: "Proofreading", description: 1 },
+  ],
 };
 
 const App = () => {
