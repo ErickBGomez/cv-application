@@ -11,13 +11,6 @@
   background-color: colors.$white;
   border: 1px solid black;
 
-  .resume-aside,
-  .resume-main {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-  }
-
   .resume-header {
     grid-area: header;
     padding: 4.38rem 0;
@@ -32,6 +25,13 @@
     .work-position {
       @include text-styles.resume-work-title;
     }
+  }
+
+  .resume-aside,
+  .resume-main {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
   }
 
   .resume-aside {
