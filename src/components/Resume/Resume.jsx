@@ -13,8 +13,21 @@ const Resume = ({ data }) => {
         <section className="about">
           <h2 className="title">About</h2>
         </section>
+        <section className="contact">
+          <h2 className="title">Contact</h2>
+        </section>
+        <section className="contact">
+          <h2 className="title">Skills</h2>
+        </section>
       </aside>
-      <div className="resume-main"></div>
+      <div className="resume-main">
+        <section className="education">
+          <h2 className="title">Education</h2>
+        </section>
+        <section className="work-experience">
+          <h2 className="title">Work experience</h2>
+        </section>
+      </div>
     </div>
   );
 };
