@@ -2,7 +2,7 @@ import ResumeSection from "../ResumeSection/ResumeSection";
 import "./Resume.scss";
 
 const Resume = ({ data }) => {
-  const { fullname, workPosition } = data;
+  const { fullname, workPosition, about, email, phoneNumber, location } = data;
 
   return (
     <div className="resume">
@@ -11,7 +11,7 @@ const Resume = ({ data }) => {
         <div className="work-position">{workPosition}</div>
       </div>
       <aside className="resume-aside">
-        <ResumeSection title="About"></ResumeSection>
+        {about && <ResumeSection title="About">{about}</ResumeSection>}
         <ResumeSection title="Contact"></ResumeSection>
         <ResumeSection title="Skills"></ResumeSection>
       </aside>
