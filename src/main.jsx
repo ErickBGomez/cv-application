@@ -9,12 +9,12 @@ import { BrowserRouter } from "react-router";
 
 const appTheme = {
   token: {
+    colorTextBase: "#2c313c",
     colorPrimary: "#426ece",
     colorInfo: "#426ece",
     fontSize: 16,
     borderRadius: 8,
     wireframe: false,
-    colorTextBase: "#2c313c",
     colorBgBase: "#fcfcfd",
     colorSuccess: "#43e285",
     fontFamily: "'Raleway', sans-serif",
