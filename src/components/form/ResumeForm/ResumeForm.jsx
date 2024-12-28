@@ -44,6 +44,15 @@ const ResumeForm = () => {
         >
           <Input placeholder="e.g. Web developer" />
         </Form.Item>
+
+        <Form.Item label="About" name="about" rules={validator.aboutRules}>
+          <Input.TextArea
+            rows={4}
+            showCount
+            maxLength={150}
+            placeholder="e.g. Currently working as a web developer at Tech Company"
+          />
+        </Form.Item>
       </FormSection>
 
       <FormSection icon={<FaPhoneAlt />} title="Contact">

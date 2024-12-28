@@ -1,4 +1,4 @@
-import { Modal, Form, Input, Rate } from "antd";
+import { Modal, Form, Input, Rate, InputNumber } from "antd";
 import "./CardModal.scss";
 import * as commonValidator from "../../../helpers/form-validators/common-validators";
 import * as educationValidator from "../../../helpers/form-validators/education-modal-validators";
@@ -80,16 +80,20 @@ const CardModal = ({
                 name="startYear"
                 rules={commonValidator.startYearRules}
               >
-                <Input placeholder="e.g. 2019" />
+                <InputNumber placeholder="e.g. 2019" />
               </Form.Item>
               <Form.Item
                 label="End year"
                 name="endYear"
                 rules={commonValidator.endYearRules}
               >
-                <Input placeholder="e.g. 2024" />
+                <InputNumber placeholder="e.g. 2024" />
               </Form.Item>
             </div>
+
+            <Form.Item label="GPA (min: 0, max: 4.0)" name="gpa">
+              <InputNumber min={0} max={4} placeholder="e.g. 3.8" />
+            </Form.Item>
           </>
         );
 

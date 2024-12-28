@@ -8,6 +8,11 @@ export const workPositionRules = [
   { min: 3, message: "Work position must be at least 3 characters" },
 ];
 
+export const aboutRules = [
+  { min: 10, message: "About must be at least 10 characters" },
+  { max: 150, message: "About must be at most 150 characters" },
+];
+
 export const emailRules = [
   { required: true, message: "Email is required" },
   { type: "email", message: "Please enter a valid email" },
