@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import "./main.scss";
 import "./assets/scss/antd-reset.scss";
 import { IconContext } from "react-icons";
+import { BrowserRouter } from "react-router";
 
 const appTheme = {
   token: {
@@ -22,12 +23,14 @@ const appTheme = {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <IconContext.Provider value={{ size: "1.5rem" }}>
-      <ConfigProvider theme={appTheme}>
-        <AntdApp>
-          <App />
-        </AntdApp>
-      </ConfigProvider>
-    </IconContext.Provider>
+    <BrowserRouter>
+      <IconContext.Provider value={{ size: "1.5rem" }}>
+        <ConfigProvider theme={appTheme}>
+          <AntdApp>
+            <App />
+          </AntdApp>
+        </ConfigProvider>
+      </IconContext.Provider>
+    </BrowserRouter>
   </StrictMode>
 );
