@@ -8,11 +8,7 @@ import * as validator from "../../../helpers/form-validators/resume-form-validat
 
 /*
   TODOs:
-  1. Add About in personal information
   2. Add social media (LinkedIn, GitHub, etc.) in contact
-  3. Add GPA in education entries
-  4. Add description in work experience (with bullet points)
-  5. Add "Present" option in education and work experience end year
   6. Refactor label texts
 */
 
@@ -27,6 +23,7 @@ const ResumeForm = () => {
       className="resume-form"
       layout="vertical"
       onFinish={handleSubmit}
+      requiredMark="optional"
     >
       <FormSection icon={<FaUser />} title="Personal Information">
         <Form.Item

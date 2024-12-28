@@ -222,6 +222,7 @@ const CardModal = ({
           endYear: checkPresent ? null : data?.endYear,
         }}
         onFinish={onSubmit}
+        requiredMark="optional"
       >
         <div className="inputs">{createFields(context)}</div>
       </Form>
