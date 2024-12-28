@@ -10,6 +10,9 @@ import { CSS } from "@dnd-kit/utilities";
 const DragCard = ({ context, data, setData }) => {
   const commonData = {
     id: data.id,
+  };
+
+  const yearData = {
     startYear: data.startYear,
     endYear: data.endYear,
   };
@@ -18,6 +21,7 @@ const DragCard = ({ context, data, setData }) => {
     context === "education"
       ? {
           ...commonData,
+          ...yearData,
           title: data.degree,
           subtitle: data.institution,
           description: data.gpa,
@@ -25,12 +29,14 @@ const DragCard = ({ context, data, setData }) => {
       : context === "work experience"
       ? {
           ...commonData,
+          ...yearData,
           title: data.title,
           subtitle: data.company,
           description: data.description,
         }
       : context === "skill"
       ? {
+          ...commonData,
           title: data.skill,
           subtitle: data.proficiency,
         }
@@ -50,7 +56,7 @@ const DragCard = ({ context, data, setData }) => {
     transform: CSS.Transform.toString(transform),
     transition,
     // Dragging card should be on top of other cards
-    zIndex: isDragging ? 9999 : "auto",
+    zIndex: isDragging ? 10 : "auto",
   };
 
   const handleOpenModal = () => {

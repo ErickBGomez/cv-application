@@ -8,7 +8,6 @@ import * as validator from "../../../helpers/form-validators/resume-form-validat
 
 /* 
   TODOs:
-  1. Education, work experience, and skills sections are being validate, even when they are empty.
   2. Fix icon positioning
 */
 const ResumeForm = () => {
@@ -97,6 +96,16 @@ const ResumeForm = () => {
           validateTrigger="onSubmit"
         >
           <DragCardsInput context="skill" />
+        </Form.Item>
+      </FormSection>
+
+      <FormSection icon={<MdStar />} title="Skills">
+        <Form.Item
+          name="skills"
+          rules={validator.skillsRules}
+          validateTrigger="onSubmit"
+        >
+          <DragCardsInput context="project" />
         </Form.Item>
       </FormSection>
 

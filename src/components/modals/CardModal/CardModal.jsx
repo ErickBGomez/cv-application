@@ -164,6 +164,13 @@ const CardModal = ({
           </>
         );
 
+      case "project":
+        return (
+          <Form.Item label="Project" name="project">
+            <Input placeholder="e.g. Portfolio website" />
+          </Form.Item>
+        );
+
       case "skill":
         return (
           <>
