@@ -2,8 +2,8 @@ export const fullnameRules = [
   { required: true, message: "Full name is required" },
 ];
 
-export const workPositionRules = [
-  { required: true, message: "Work position is required" },
+export const jobTitleRules = [
+  { required: true, message: "Job title is required" },
 ];
 
 export const aboutRules = [

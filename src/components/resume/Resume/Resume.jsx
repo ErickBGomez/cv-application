@@ -8,7 +8,7 @@ import ResumeEntry from "../ResumeEntry/ResumeEntry";
 const Resume = ({ data }) => {
   const {
     fullname,
-    workPosition,
+    jobTitle,
     about,
     email,
     phoneNumber,
@@ -22,7 +22,7 @@ const Resume = ({ data }) => {
     <div className="resume">
       <div className="resume-header">
         <div className="fullname">{fullname}</div>
-        <div className="work-position">{workPosition}</div>
+        <div className="work-position">{jobTitle}</div>
       </div>
       <aside className="resume-aside">
         {about && <ResumeSection title="About">{about}</ResumeSection>}

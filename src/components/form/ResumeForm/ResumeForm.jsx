@@ -8,7 +8,6 @@ import * as validator from "../../../helpers/form-validators/resume-form-validat
 
 /*
   TODOs:
-  2. Add social media (LinkedIn, GitHub, etc.) in contact
   6. Refactor label texts
 */
 
@@ -35,9 +34,9 @@ const ResumeForm = () => {
         </Form.Item>
 
         <Form.Item
-          label="Work position"
-          name="workPosition"
-          rules={validator.workPositionRules}
+          label="Job title"
+          name="jobTitle"
+          rules={validator.jobTitleRules}
         >
           <Input placeholder="e.g. Web developer" />
         </Form.Item>
