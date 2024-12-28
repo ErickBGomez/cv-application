@@ -88,7 +88,6 @@ const ResumeForm = () => {
         </Form.Item>
       </FormSection>
 
-      {/* Skill delete not working */}
       <FormSection icon={<MdStar />} title="Skills">
         <Form.Item
           name="skills"
@@ -96,16 +95,6 @@ const ResumeForm = () => {
           validateTrigger="onSubmit"
         >
           <DragCardsInput context="skill" />
-        </Form.Item>
-      </FormSection>
-
-      <FormSection icon={<MdStar />} title="Skills">
-        <Form.Item
-          name="skills"
-          rules={validator.skillsRules}
-          validateTrigger="onSubmit"
-        >
-          <DragCardsInput context="project" />
         </Form.Item>
       </FormSection>
 
