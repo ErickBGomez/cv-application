@@ -121,7 +121,7 @@ const CardModal = ({
             <Form.Item
               label="GPA (min: 0, max: 4.0)"
               name="gpa"
-              // rules={educationValidator.gpaRules}
+              rules={educationValidator.gpaRules}
             >
               <InputNumber min={0} max={4} placeholder="e.g. 3.8" />
             </Form.Item>

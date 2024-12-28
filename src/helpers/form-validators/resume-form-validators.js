@@ -1,15 +1,12 @@
 export const fullnameRules = [
   { required: true, message: "Full name is required" },
-  { min: 3, message: "Full name must be at least 3 characters" },
 ];
 
 export const workPositionRules = [
   { required: true, message: "Work position is required" },
-  { min: 3, message: "Work position must be at least 3 characters" },
 ];
 
 export const aboutRules = [
-  { min: 10, message: "About must be at least 10 characters" },
   { max: 150, message: "About must be at most 150 characters" },
 ];
 
