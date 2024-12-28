@@ -2,9 +2,21 @@
 
 .resume-page {
   color: colors.$black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
 
   .title-section {
     text-align: center;
-    margin-bottom: 4rem;
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    border: 1px solid colors.$black-25;
+    border-radius: 1rem;
+    padding: 0.8rem 1rem;
   }
 }
