@@ -1,4 +1,5 @@
 import { Rate } from "antd";
+import "./SkillInfo.scss";
 
 const SkillInfo = ({ title, value }) => {
   return (
