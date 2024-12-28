@@ -1,6 +1,10 @@
 @use "../../../assets/scss/colors";
 @use "../../../assets/scss/text-styles";
 
+legend {
+  margin: 0;
+}
+
 .section {
   display: flex;
   padding: 1.5rem;
