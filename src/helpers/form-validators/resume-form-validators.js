@@ -22,3 +22,13 @@ export const phoneNumberRules = [
     message: "Phone number must be in the format 1234-5678",
   },
 ];
+
+export const educationRules = [
+  { required: true, message: "Education is required" },
+];
+
+export const workExperienceRules = [
+  { required: true, message: "Work experience is required" },
+];
+
+export const skillsRules = [{ required: true, message: "Skills are required" }];

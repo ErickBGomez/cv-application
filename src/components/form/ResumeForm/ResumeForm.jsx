@@ -6,11 +6,6 @@ import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
 import * as validator from "../../../helpers/form-validators/resume-form-validators";
 
-/*
-  TODOs:
-  6. Refactor label texts
-*/
-
 const ResumeForm = () => {
   const handleSubmit = (values) => {
     console.log(values);
@@ -73,19 +68,27 @@ const ResumeForm = () => {
       </FormSection>
 
       <FormSection icon={<FaGraduationCap />} title="Education">
-        <Form.Item label={null} name="education">
+        <Form.Item
+          label={null}
+          name="education"
+          rules={validator.educationRules}
+        >
           <DragCardsInput context="education" />
         </Form.Item>
       </FormSection>
 
       <FormSection icon={<MdBusinessCenter />} title="Work experience">
-        <Form.Item label={null} name="workExperience">
+        <Form.Item
+          label={null}
+          name="workExperience"
+          rules={validator.workExperienceRules}
+        >
           <DragCardsInput context="work experience" />
         </Form.Item>
       </FormSection>
 
       <FormSection icon={<MdStar />} title="Skills">
-        <Form.Item label={null} name="skills">
+        <Form.Item label={null} name="skills" rules={validator.skillsRules}>
           <DragCardsInput context="skill" />
         </Form.Item>
       </FormSection>
