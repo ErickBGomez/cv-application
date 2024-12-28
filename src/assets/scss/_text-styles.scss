@@ -81,3 +81,9 @@
   font-size: 2.5rem;
   font-weight: 400;
 }
+
+@mixin header-logo() {
+  @include common-styles;
+  font-size: 1.2rem;
+  font-weight: 700;
+}

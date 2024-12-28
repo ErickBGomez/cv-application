@@ -1,0 +1,20 @@
+@use "../.././../assets/scss/colors";
+@use "../.././../assets/scss/text-styles";
+
+header {
+  padding: 2rem 12.5rem;
+  border-bottom: 1px solid colors.$black;
+
+  .logo {
+    @include text-styles.header-logo;
+    color: colors.$primary;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    .icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
