@@ -121,7 +121,7 @@ const CardModal = ({
             <Form.Item
               label="GPA (min: 0, max: 4.0)"
               name="gpa"
-              rules={educationValidator.gpaRules}
+              // rules={educationValidator.gpaRules}
             >
               <InputNumber min={0} max={4} placeholder="e.g. 3.8" />
             </Form.Item>
@@ -216,18 +216,7 @@ const CardModal = ({
         layout="vertical"
         className="card-form"
         form={form}
-        // Set the initial values based on the data provided
-        // If no data is provided, set the initial values to null
-        // initialValues={
-        //   data
-        //     ? {
-        //         title: data.title,
-        //         description: data.description,
-        //         startYear: data.startYear,
-        //         endYear: data.endYear,
-        //       }
-        //     : null
-        // }
+        initialValues={{ ...data }}
         onFinish={onSubmit}
       >
         <div className="inputs">{createFields(context)}</div>

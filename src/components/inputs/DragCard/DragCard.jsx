@@ -8,7 +8,34 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 const DragCard = ({ context, data, setData }) => {
-  const { id, title, description, startYear, endYear } = data;
+  const commonData = {
+    id: data.id,
+    startYear: data.startYear,
+    endYear: data.endYear,
+  };
+
+  const parsedData =
+    context === "education"
+      ? {
+          ...commonData,
+          title: data.degree,
+          subtitle: data.institution,
+          description: data.gpa,
+        }
+      : context === "work experience"
+      ? {
+          ...commonData,
+          title: data.title,
+          subtitle: data.company,
+          description: data.description,
+        }
+      : context === "skill"
+      ? {
+          title: data.skill,
+          subtitle: data.proficiency,
+        }
+      : null;
+
   const [modalOpen, setModalOpen] = useState(false);
   const {
     attributes,
@@ -17,7 +44,7 @@ const DragCard = ({ context, data, setData }) => {
     transform,
     transition,
     isDragging,
-  } = useSortable({ id });
+  } = useSortable({ id: parsedData.id });
 
   const dragStyle = {
     transform: CSS.Transform.toString(transform),
@@ -31,7 +58,7 @@ const DragCard = ({ context, data, setData }) => {
   };
 
   const handleDeleteCard = () => {
-    setData((prevData) => prevData.filter((item) => item.id !== id));
+    setData((prevData) => prevData.filter((item) => item.id !== parsedData.id));
   };
 
   const handleAvoidPropagation = (e) => {
@@ -60,17 +87,17 @@ const DragCard = ({ context, data, setData }) => {
           <MdDragIndicator />
         </div>
         <div className="content">
-          <div className="drag-card-title">{title}</div>
+          <div className="drag-card-title">{parsedData.title}</div>
           <div className="drag-card-description">
             {context === "skill" ? (
-              <Rate value={description} disabled />
+              <Rate value={parsedData.subtitle} disabled />
             ) : (
-              description
+              parsedData.subtitle
             )}
           </div>
-          {startYear && endYear && (
+          {parsedData.startYear && parsedData.endYear && (
             <div className="drag-card-smalltext">
-              {startYear} - {endYear}
+              {parsedData.startYear} - {parsedData.endYear}
             </div>
           )}
         </div>
