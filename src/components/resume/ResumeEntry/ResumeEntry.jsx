@@ -1,4 +1,5 @@
 const ResumeEntry = ({ context }) => {
+  // Provisional data, remove later
   const data = {
     degree: "Bachelor's degree in Computer Science",
     institution: "University of El Salvador",
@@ -7,6 +8,7 @@ const ResumeEntry = ({ context }) => {
     gpa: 3.8,
   };
 
+  // Set parsedData based on context (education or work experience)
   const commonData = {
     startYear: data.startYear,
     endYear: data.endYear,
