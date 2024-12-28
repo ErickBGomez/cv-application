@@ -3,6 +3,7 @@ import ResumeSection from "../ResumeSection/ResumeSection";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import SkillInfo from "../SkillInfo/SkillInfo";
 import "./Resume.scss";
+import ResumeEntry from "../ResumeEntry/ResumeEntry";
 
 const Resume = ({ data }) => {
   const {
@@ -37,7 +38,9 @@ const Resume = ({ data }) => {
         )}
       </aside>
       <div className="resume-main">
-        <ResumeSection title="Education"></ResumeSection>
+        <ResumeSection title="Education">
+          <ResumeEntry context="education" />
+        </ResumeSection>
         <ResumeSection title="Work Experience"></ResumeSection>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import "./ResumeEntry.scss";
+
 const ResumeEntry = ({ context }) => {
   // Provisional data, remove later
   const data = {
@@ -30,7 +32,7 @@ const ResumeEntry = ({ context }) => {
         };
 
   return (
-    <div className="entry">
+    <div className="resume-entry">
       <div className="title">{parsedData.title}</div>
       <div className="subtitle">{parsedData.subtitle}</div>
       <div className="years">
@@ -38,9 +40,13 @@ const ResumeEntry = ({ context }) => {
       </div>
       {parsedData.description && (
         <div className="description">
-          {context === "education"
-            ? `GPA: ${parsedData.description} / 4.0`
-            : parsedData.description}
+          {context === "education" ? (
+            <div>
+              <span className="gpa">GPA:</span> {parsedData.description} / 4.0
+            </div>
+          ) : (
+            parsedData.description
+          )}
         </div>
       )}
     </div>
