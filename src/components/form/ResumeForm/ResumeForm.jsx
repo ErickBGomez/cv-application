@@ -1,6 +1,11 @@
 import { Button, Form, Input } from "antd";
-import { FaUser, FaPhoneAlt, FaGraduationCap } from "react-icons/fa";
-import { MdBusinessCenter, MdStar } from "react-icons/md";
+import {
+  MdPerson,
+  MdCall,
+  MdSchool,
+  MdBusinessCenter,
+  MdStar,
+} from "react-icons/md";
 import FormSection from "../FormSection/FormSection";
 import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
@@ -23,7 +28,7 @@ const ResumeForm = () => {
       onFinish={handleSubmit}
       requiredMark="optional"
     >
-      <FormSection icon={<FaUser />} title="Personal Information">
+      <FormSection icon={<MdPerson />} title="Personal Information">
         <Form.Item
           label="Full name"
           name="fullName"
@@ -50,7 +55,7 @@ const ResumeForm = () => {
         </Form.Item>
       </FormSection>
 
-      <FormSection icon={<FaPhoneAlt />} title="Contact">
+      <FormSection icon={<MdCall />} title="Contact">
         <Form.Item label="Email" name="email" rules={validator.emailRules}>
           <Input placeholder="e.g. johndoe@domain.com" />
         </Form.Item>
@@ -68,7 +73,7 @@ const ResumeForm = () => {
         </Form.Item>
       </FormSection>
 
-      <FormSection icon={<FaGraduationCap />} title="Education">
+      <FormSection icon={<MdSchool />} title="Education">
         <Form.Item
           name="education"
           rules={validator.educationRules}

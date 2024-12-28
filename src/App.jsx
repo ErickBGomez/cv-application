@@ -52,9 +52,9 @@ const data = {
     },
   ],
   skills: [
-    { skill: "React", value: 5 },
-    { skill: "NodeJS", value: 3 },
-    { skill: "Proofreading", value: 1 },
+    { skill: "React", proficiency: 5 },
+    { skill: "NodeJS", proficiency: 3 },
+    { skill: "Proofreading", proficiency: 1 },
   ],
 };
 

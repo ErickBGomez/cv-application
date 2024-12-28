@@ -22,6 +22,12 @@ legend {
     gap: 0.6rem;
     align-items: center;
 
+    .title-icon {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .title {
       @include text-styles.form-section-title;
     }
