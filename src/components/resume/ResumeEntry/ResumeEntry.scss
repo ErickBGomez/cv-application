@@ -2,7 +2,7 @@
 
 .resume-entry {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 1fr max-content;
   grid-template-areas:
     "title years"
     "subtitle subtitle"

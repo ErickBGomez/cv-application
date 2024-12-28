@@ -37,7 +37,7 @@ const data = {
       title: "Web Developer",
       company: "Tech Company",
       startYear: 2027,
-      endYear: 2029,
+      endYear: "Present",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Aliquam in hendrerit urna. Pellentesque sit amet ",
     },

@@ -5,24 +5,6 @@ import SkillInfo from "../SkillInfo/SkillInfo";
 import "./Resume.scss";
 import ResumeEntry from "../ResumeEntry/ResumeEntry";
 
-// Provisional data, remove later
-const educationData = {
-  degree: "Bachelor's degree in Computer Science",
-  institution: "University of El Salvador",
-  startYear: 2023,
-  endYear: 2026,
-  gpa: 3.8,
-};
-
-const workData = {
-  title: "Web Developer",
-  company: "Tech Company",
-  startYear: 2027,
-  endYear: 2029,
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Aliquam in hendrerit urna. Pellentesque sit amet ",
-};
-
 const Resume = ({ data }) => {
   const {
     fullname,
@@ -31,6 +13,8 @@ const Resume = ({ data }) => {
     email,
     phoneNumber,
     location,
+    education,
+    workExperience,
     skills,
   } = data;
 
@@ -57,12 +41,14 @@ const Resume = ({ data }) => {
       </aside>
       <div className="resume-main">
         <ResumeSection title="Education" list>
-          <ResumeEntry context="education" data={educationData} />
-          <ResumeEntry context="education" data={educationData} />
+          {education.map((e, i) => (
+            <ResumeEntry key={i} context="education" data={e} />
+          ))}
         </ResumeSection>
         <ResumeSection title="Work Experience" list>
-          <ResumeEntry context="work" data={workData} />
-          <ResumeEntry context="work" data={workData} />
+          {workExperience.map((w, i) => (
+            <ResumeEntry key={i} context="work" data={w} />
+          ))}
         </ResumeSection>
       </div>
     </div>
