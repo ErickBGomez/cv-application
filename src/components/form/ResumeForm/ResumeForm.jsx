@@ -71,6 +71,9 @@ const ResumeForm = () => {
         <Form.Item label="Location" name="location">
           <Input placeholder="e.g. Miami, Florida, USA" />
         </Form.Item>
+
+        {/* TODO: Add social media: Button to appear a input to accept title and link.
+        Then, in the result, determine the corresponding icon */}
       </FormSection>
 
       <FormSection icon={<FaGraduationCap />} title="Education">

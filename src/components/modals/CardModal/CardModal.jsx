@@ -97,7 +97,11 @@ const CardModal = ({
 
             {yearInputs()}
 
-            <Form.Item label="GPA (min: 0, max: 4.0)" name="gpa">
+            <Form.Item
+              label="GPA (min: 0, max: 4.0)"
+              name="gpa"
+              rules={educationValidator.gpaRules}
+            >
               <InputNumber min={0} max={4} placeholder="e.g. 3.8" />
             </Form.Item>
           </>
@@ -124,7 +128,11 @@ const CardModal = ({
 
             {yearInputs()}
 
-            <Form.Item label="Description" name="description">
+            <Form.Item
+              label="Description"
+              name="description"
+              rules={workValidator.descriptionRules}
+            >
               <Input.TextArea
                 rows={4}
                 showCount
