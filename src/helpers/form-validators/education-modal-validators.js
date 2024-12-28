@@ -1,6 +1,6 @@
-export const educationRules = [
-  { required: true, message: "Education field is required" },
-  { min: 2, message: "Education must be at least 2 characters" },
+export const degreeRules = [
+  { required: true, message: "Degree field is required" },
+  { min: 2, message: "Degree must be at least 2 characters" },
 ];
 
 export const institutionRules = [

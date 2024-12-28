@@ -15,12 +15,12 @@ const CardModal = ({
   setData,
   mode = "create",
 }) => {
-  const [presentEndYear, setPresentEndYear] = useState(false);
+  const [checkPresent, setCheckPresent] = useState(false);
   const [form] = Form.useForm();
 
-  // TODO: card creation its not working
   const onSubmit = (values) => {
-    if (presentEndYear) values.endYear = "Present";
+    // Set end year to "Present" if the checkbox is checked
+    if (checkPresent) values.endYear = "Present";
 
     // Create new data entry in create mode
     if (mode === "create") {
@@ -32,24 +32,24 @@ const CardModal = ({
         },
       ]);
       if (mode === "create") form.resetFields();
-      return;
     }
 
     // Update current data in edit mode, without mutating the rest of entries
     // Use spread operator to only change the present data in the modal form
-    if (mode === "edit") {
+    else if (mode === "edit") {
       setData((prev) =>
         prev.map((item) =>
           item.id === data.id ? { ...data, ...values } : item
         )
       );
-      return;
     }
+
+    closeModal();
   };
 
   const closeModal = () => {
     setOpen(false);
-    setPresentEndYear(false);
+    setCheckPresent(false);
   };
 
   const handleCancel = () => {
@@ -59,7 +59,6 @@ const CardModal = ({
 
   const handleOk = () => {
     form.submit();
-    closeModal();
   };
 
   const yearInputs = () => {
@@ -76,12 +75,18 @@ const CardModal = ({
           <Form.Item
             label="End year"
             name="endYear"
-            rules={commonValidator.endYearRules}
+            rules={[
+              ...commonValidator.endYearRules,
+              { required: !checkPresent, message: "End year is required" },
+            ]}
           >
-            <InputNumber placeholder="e.g. 2024" disabled={presentEndYear} />
+            <InputNumber placeholder="e.g. 2024" disabled={checkPresent} />
           </Form.Item>
           <div className="present-checkbox">
-            <Checkbox onChange={(e) => setPresentEndYear(e.target.checked)} />
+            <Checkbox
+              onChange={(e) => setCheckPresent(e.target.checked)}
+              checked={checkPresent}
+            />
             <span>Present</span>
           </div>
         </div>
@@ -96,16 +101,16 @@ const CardModal = ({
         return (
           <>
             <Form.Item
-              label="Education"
-              name="title"
-              rules={educationValidator.educationRules}
+              label="Degree"
+              name="degree"
+              rules={educationValidator.degreeRules}
             >
               <Input placeholder="e.g. Bachelor in Computer Science" />
             </Form.Item>
 
             <Form.Item
               label="Institution"
-              name="description"
+              name="institution"
               rules={educationValidator.institutionRules}
             >
               <Input placeholder="e.g. University of Miami" />
@@ -127,16 +132,16 @@ const CardModal = ({
         return (
           <>
             <Form.Item
-              label="Position"
+              label="Title"
               name="title"
-              rules={workValidator.positionRules}
+              rules={workValidator.titleRules}
             >
               <Input placeholder="e.g. Web Developer" />
             </Form.Item>
 
             <Form.Item
               label="Company"
-              name="description"
+              name="company"
               rules={workValidator.companyRules}
             >
               <Input placeholder="e.g. Google" />
@@ -164,7 +169,7 @@ const CardModal = ({
           <>
             <Form.Item
               label="Skill"
-              name="title"
+              name="skill"
               rules={skillValidator.skillRules}
             >
               <Input placeholder="e.g. JavaScript" />
@@ -172,7 +177,7 @@ const CardModal = ({
 
             <Form.Item
               label="Proficiency"
-              name="description"
+              name="proficiency"
               rules={skillValidator.rateRules}
             >
               <Rate />

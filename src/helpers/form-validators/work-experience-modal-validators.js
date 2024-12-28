@@ -1,6 +1,6 @@
-export const positionRules = [
-  { required: true, message: "Position field is required" },
-  { min: 2, message: "Position must be at least 2 characters" },
+export const titleRules = [
+  { required: true, message: "Title field is required" },
+  { min: 2, message: "Title must be at least 2 characters" },
 ];
 
 export const companyRules = [

@@ -7,7 +7,6 @@ export const startYearRules = [
 ];
 
 export const endYearRules = [
-  { required: true, message: "End year is required" },
   {
     pattern: /^[0-9]{4}$/,
     message: "End year must be a valid year (e.g., 2024)",
