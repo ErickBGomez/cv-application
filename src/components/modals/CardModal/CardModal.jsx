@@ -1,10 +1,11 @@
-import { Modal, Form, Input, Rate, InputNumber } from "antd";
+import { Modal, Form, Input, Rate, InputNumber, Checkbox } from "antd";
 import "./CardModal.scss";
 import * as commonValidator from "../../../helpers/form-validators/common-validators";
 import * as educationValidator from "../../../helpers/form-validators/education-modal-validators";
 import * as workValidator from "../../../helpers/form-validators/work-experience-modal-validators";
 import * as skillValidator from "../../../helpers/form-validators/skills-modal-validators";
 import { capitalize } from "../../../helpers/strings";
+import { useState } from "react";
 
 const CardModal = ({
   context,
@@ -14,9 +15,13 @@ const CardModal = ({
   setData,
   mode = "create",
 }) => {
+  const [presentEndYear, setPresentEndYear] = useState(false);
   const [form] = Form.useForm();
 
+  // TODO: card creation its not working
   const onSubmit = (values) => {
+    if (presentEndYear) values.endYear = "Present";
+
     // Create new data entry in create mode
     if (mode === "create") {
       setData((prev) => [
@@ -42,14 +47,19 @@ const CardModal = ({
     }
   };
 
+  const closeModal = () => {
+    setOpen(false);
+    setPresentEndYear(false);
+  };
+
   const handleCancel = () => {
     form.resetFields();
-    setOpen(false);
+    closeModal();
   };
 
   const handleOk = () => {
     form.submit();
-    setOpen(false);
+    closeModal();
   };
 
   const yearInputs = () => {
@@ -62,13 +72,19 @@ const CardModal = ({
         >
           <InputNumber placeholder="e.g. 2019" />
         </Form.Item>
-        <Form.Item
-          label="End year"
-          name="endYear"
-          rules={commonValidator.endYearRules}
-        >
-          <InputNumber placeholder="e.g. 2024" />
-        </Form.Item>
+        <div className="end-year">
+          <Form.Item
+            label="End year"
+            name="endYear"
+            rules={commonValidator.endYearRules}
+          >
+            <InputNumber placeholder="e.g. 2024" disabled={presentEndYear} />
+          </Form.Item>
+          <div className="present-checkbox">
+            <Checkbox onChange={(e) => setPresentEndYear(e.target.checked)} />
+            <span>Present</span>
+          </div>
+        </div>
       </div>
     );
   };
@@ -197,16 +213,16 @@ const CardModal = ({
         form={form}
         // Set the initial values based on the data provided
         // If no data is provided, set the initial values to null
-        initialValues={
-          data
-            ? {
-                title: data.title,
-                description: data.description,
-                startYear: data.startYear,
-                endYear: data.endYear,
-              }
-            : null
-        }
+        // initialValues={
+        //   data
+        //     ? {
+        //         title: data.title,
+        //         description: data.description,
+        //         startYear: data.startYear,
+        //         endYear: data.endYear,
+        //       }
+        //     : null
+        // }
         onFinish={onSubmit}
       >
         <div className="inputs">{createFields(context)}</div>

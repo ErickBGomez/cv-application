@@ -11,6 +11,18 @@
       display: flex;
       gap: 1.5rem;
       width: 100%;
+
+      .end-year {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .present-checkbox {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
     }
   }
 }
