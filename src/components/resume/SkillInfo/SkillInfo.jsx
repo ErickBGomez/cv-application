@@ -1,10 +1,10 @@
 import { Rate } from "antd";
 import "./SkillInfo.scss";
 
-const SkillInfo = ({ title, value }) => {
+const SkillInfo = ({ skill, value }) => {
   return (
     <div className="skill-info">
-      <div className="title">{title}</div>
+      <div className="skill">{skill}</div>
       <div className="value">
         <Rate value={value} disabled />
       </div>

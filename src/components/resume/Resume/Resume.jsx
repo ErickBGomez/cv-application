@@ -31,7 +31,7 @@ const Resume = ({ data }) => {
         {skills && (
           <ResumeSection title="Skills" list>
             {skills.map((s, i) => (
-              <SkillInfo key={i} title={s.title} value={s.description} />
+              <SkillInfo key={i} skill={s.skill} value={s.value} />
             ))}
           </ResumeSection>
         )}
