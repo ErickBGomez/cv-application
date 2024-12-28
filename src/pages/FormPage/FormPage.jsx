@@ -1,4 +1,5 @@
 import ResumeForm from "../../components/form/ResumeForm/ResumeForm";
+import "./FormPage.scss";
 
 const FormPage = () => {
   return (
