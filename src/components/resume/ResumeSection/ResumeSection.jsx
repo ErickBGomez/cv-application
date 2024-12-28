@@ -4,7 +4,7 @@ const ResumeSection = ({ title, children, list }) => {
   return (
     <section className="resume-section">
       <h2 className="title">{title}</h2>
-      <div className={`content ${list ? "list" : ""}`}>{children}</div>
+      <div className={`content ${list && "list"}`}>{children}</div>
     </section>
   );
 };
