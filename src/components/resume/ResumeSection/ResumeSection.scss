@@ -1,6 +1,12 @@
 @use "../../../assets/scss/colors";
 
 .resume-section {
+  .icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .content.list {
     display: flex;
     flex-direction: column;

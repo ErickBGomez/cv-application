@@ -27,9 +27,14 @@ const Resume = ({ data }) => {
       <aside className="resume-aside">
         {about && <ResumeSection title="About">{about}</ResumeSection>}
         <ResumeSection title="Contact" list>
-          <ContactInfo icon={<MdEmail />} info={email} />
-          <ContactInfo icon={<MdCall />} info={phoneNumber} />
-          {location && <ContactInfo icon={<MdLocationOn />} info={location} />}
+          <ContactInfo icon={<MdEmail size="1.25rem" />} info={email} />
+          <ContactInfo icon={<MdCall size="1.25rem" />} info={phoneNumber} />
+          {location && (
+            <ContactInfo
+              icon={<MdLocationOn size="1.25rem" />}
+              info={location}
+            />
+          )}
         </ResumeSection>
         {skills && (
           <ResumeSection title="Skills" list>

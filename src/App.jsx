@@ -59,8 +59,8 @@ const data = {
 };
 
 const App = () => {
-  // return <Resume data={data} />;
-  return <ResumeForm />;
+  return <Resume data={data} />;
+  // return <ResumeForm />;
 };
 
 export default App;
