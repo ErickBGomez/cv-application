@@ -5,7 +5,7 @@ import * as educationValidator from "../../../helpers/form-validators/education-
 import * as workValidator from "../../../helpers/form-validators/work-experience-modal-validators";
 import * as skillValidator from "../../../helpers/form-validators/skills-modal-validators";
 import { capitalize } from "../../../helpers/strings";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CardModal = ({
   context,
@@ -17,6 +17,14 @@ const CardModal = ({
 }) => {
   const [checkPresent, setCheckPresent] = useState(false);
   const [form] = Form.useForm();
+
+  // TODO: Set end year to "Present" if the checkbox is checked
+  useEffect(() => {
+    if (data && data.endYear === "Present") {
+      data.endYear = "";
+      setCheckPresent(true);
+    }
+  }, [open]);
 
   const onSubmit = (values) => {
     // Set end year to "Present" if the checkbox is checked
