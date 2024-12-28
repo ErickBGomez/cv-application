@@ -6,6 +6,11 @@ import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
 import * as validator from "../../../helpers/form-validators/resume-form-validators";
 
+/* 
+  TODOs:
+  1. Education, work experience, and skills sections are being validate, even when they are empty.
+  2. Fix icon positioning
+*/
 const ResumeForm = () => {
   const handleSubmit = (values) => {
     console.log(values);
@@ -62,16 +67,13 @@ const ResumeForm = () => {
         <Form.Item label="Location" name="location">
           <Input placeholder="e.g. Miami, Florida, USA" />
         </Form.Item>
-
-        {/* TODO: Add social media: Button to appear a input to accept title and link.
-        Then, in the result, determine the corresponding icon */}
       </FormSection>
 
       <FormSection icon={<FaGraduationCap />} title="Education">
         <Form.Item
-          label={null}
           name="education"
           rules={validator.educationRules}
+          validateTrigger="onSubmit"
         >
           <DragCardsInput context="education" />
         </Form.Item>
@@ -79,21 +81,26 @@ const ResumeForm = () => {
 
       <FormSection icon={<MdBusinessCenter />} title="Work experience">
         <Form.Item
-          label={null}
           name="workExperience"
           rules={validator.workExperienceRules}
+          validateTrigger="onSubmit"
         >
           <DragCardsInput context="work experience" />
         </Form.Item>
       </FormSection>
 
+      {/* Skill delete not working */}
       <FormSection icon={<MdStar />} title="Skills">
-        <Form.Item label={null} name="skills" rules={validator.skillsRules}>
+        <Form.Item
+          name="skills"
+          rules={validator.skillsRules}
+          validateTrigger="onSubmit"
+        >
           <DragCardsInput context="skill" />
         </Form.Item>
       </FormSection>
 
-      <Form.Item label={null}>
+      <Form.Item>
         <Button type="primary" htmlType="submit" className="submit-button">
           Submit
         </Button>

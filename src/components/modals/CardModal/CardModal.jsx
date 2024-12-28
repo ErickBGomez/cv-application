@@ -1,4 +1,4 @@
-import { Modal, Form, Input, Rate, InputNumber, Checkbox } from "antd";
+import { Modal, Form, Input, Rate, InputNumber, Checkbox, Button } from "antd";
 import "./CardModal.scss";
 import * as commonValidator from "../../../helpers/form-validators/common-validators";
 import * as educationValidator from "../../../helpers/form-validators/education-modal-validators";
@@ -225,6 +225,13 @@ const CardModal = ({
         requiredMark="optional"
       >
         <div className="inputs">{createFields(context)}</div>
+        <Form.Item>
+          <Button
+            type="primary"
+            htmlType="submit"
+            style={{ display: "none" }}
+          />
+        </Form.Item>
       </Form>
     </Modal>
   );
