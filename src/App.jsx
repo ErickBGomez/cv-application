@@ -8,9 +8,6 @@ import FormPage from "./pages/FormPage/FormPage";
 
 /*
   TODOs:
-  1. form todos
-  2. Add header and footer
-  3. Change themes
   4. Save info in local storage
 */
 

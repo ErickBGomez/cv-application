@@ -10,14 +10,14 @@ import FormSection from "../FormSection/FormSection";
 import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
 import * as validator from "../../../helpers/form-validators/resume-form-validators";
+import { useNavigate } from "react-router";
 
-/* 
-  TODOs:
-  2. Fix icon positioning
-*/
 const ResumeForm = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = (values) => {
     console.log(values);
+    navigate("/result", { state: { values } });
   };
 
   return (
