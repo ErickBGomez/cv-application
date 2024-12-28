@@ -52,6 +52,27 @@ const CardModal = ({
     setOpen(false);
   };
 
+  const yearInputs = () => {
+    return (
+      <div className="years">
+        <Form.Item
+          label="Start year"
+          name="startYear"
+          rules={commonValidator.startYearRules}
+        >
+          <InputNumber placeholder="e.g. 2019" />
+        </Form.Item>
+        <Form.Item
+          label="End year"
+          name="endYear"
+          rules={commonValidator.endYearRules}
+        >
+          <InputNumber placeholder="e.g. 2024" />
+        </Form.Item>
+      </div>
+    );
+  };
+
   // Create fields based on the context provided
   const createFields = (context) => {
     switch (context) {
@@ -74,22 +95,7 @@ const CardModal = ({
               <Input placeholder="e.g. University of Miami" />
             </Form.Item>
 
-            <div className="years">
-              <Form.Item
-                label="Start year"
-                name="startYear"
-                rules={commonValidator.startYearRules}
-              >
-                <InputNumber placeholder="e.g. 2019" />
-              </Form.Item>
-              <Form.Item
-                label="End year"
-                name="endYear"
-                rules={commonValidator.endYearRules}
-              >
-                <InputNumber placeholder="e.g. 2024" />
-              </Form.Item>
-            </div>
+            {yearInputs()}
 
             <Form.Item label="GPA (min: 0, max: 4.0)" name="gpa">
               <InputNumber min={0} max={4} placeholder="e.g. 3.8" />
@@ -116,22 +122,16 @@ const CardModal = ({
               <Input placeholder="e.g. Google" />
             </Form.Item>
 
-            <div className="years">
-              <Form.Item
-                label="Start year"
-                name="startYear"
-                rules={commonValidator.startYearRules}
-              >
-                <Input placeholder="e.g. 2019" />
-              </Form.Item>
-              <Form.Item
-                label="End year"
-                name="endYear"
-                rules={commonValidator.endYearRules}
-              >
-                <Input placeholder="e.g. Present" />
-              </Form.Item>
-            </div>
+            {yearInputs()}
+
+            <Form.Item label="Description" name="description">
+              <Input.TextArea
+                rows={4}
+                showCount
+                maxLength={1000}
+                placeholder="e.g. Developed web applications using React and Node.js"
+              />
+            </Form.Item>
           </>
         );
 
