@@ -1,4 +1,5 @@
 import ResumeForm from "./components/form/ResumeForm/ResumeForm";
+import Footer from "./components/page-elements/Footer/Footer";
 import Header from "./components/page-elements/Header/Header";
 import Resume from "./components/resume/Resume/Resume";
 
@@ -62,7 +63,8 @@ const data = {
 const App = () => {
   // return <Resume data={data} />;
   // return <ResumeForm />;
-  return <Header />;
+  // return <Header />;
+  return <Footer />;
 };
 
 export default App;

@@ -1,0 +1,7 @@
+@use "../../../assets/scss/text-styles";
+
+footer {
+  .credits {
+    @include text-styles.footer-link;
+  }
+}
