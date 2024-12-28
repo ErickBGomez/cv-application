@@ -16,6 +16,36 @@ const data = {
   email: "erickgomez@domain.com",
   phoneNumber: "+503 1234-5678",
   location: "San Salvador, El Salvador",
+  education: [
+    {
+      title: "Bachelor of Science in Computer Science",
+      description: "Central America University",
+      startYear: 2023,
+      endYear: 2027,
+      gpa: 3.8,
+    },
+    {
+      title: "High School Diploma",
+      description: "San Salvador High School",
+      startYear: 2019,
+      endYear: 2022,
+      gpa: 4.0,
+    },
+  ],
+  workExperience: [
+    {
+      title: "Web developer",
+      description: "Company A",
+      startYear: 2027,
+      endYear: "Present",
+    },
+    {
+      title: "Intern",
+      description: "Company B",
+      startYear: 2026,
+      endYear: 2027,
+    },
+  ],
   skills: [
     { title: "React", description: 5 },
     { title: "NodeJS", description: 3 },
