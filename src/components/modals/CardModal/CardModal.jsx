@@ -18,14 +18,6 @@ const CardModal = ({
   const [checkPresent, setCheckPresent] = useState(false);
   const [form] = Form.useForm();
 
-  // TODO: Set end year to "Present" if the checkbox is checked
-  useEffect(() => {
-    if (data && data.endYear === "Present") {
-      data.endYear = "";
-      setCheckPresent(true);
-    }
-  }, [open]);
-
   const onSubmit = (values) => {
     // Set end year to "Present" if the checkbox is checked
     if (checkPresent) values.endYear = "Present";
@@ -224,7 +216,11 @@ const CardModal = ({
         layout="vertical"
         className="card-form"
         form={form}
-        initialValues={{ ...data }}
+        initialValues={{
+          ...data,
+          // Leave endYear field empty if the Present checkbox is checked
+          endYear: checkPresent ? null : data?.endYear,
+        }}
         onFinish={onSubmit}
       >
         <div className="inputs">{createFields(context)}</div>
