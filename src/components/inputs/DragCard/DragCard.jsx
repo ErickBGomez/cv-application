@@ -1,13 +1,16 @@
 import { useState } from "react";
-import { Rate, Popconfirm } from "antd";
+import { Rate, Popconfirm, App } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { MdDragIndicator, MdClose } from "react-icons/md";
 import CardModal from "../../modals/CardModal/CardModal";
 import "./DragCard.scss";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import { capitalize } from "../../../helpers/strings";
 
 const DragCard = ({ context, data, setData }) => {
+  const { message } = App.useApp();
+
   const commonData = {
     id: data.id,
   };
@@ -65,6 +68,7 @@ const DragCard = ({ context, data, setData }) => {
 
   const handleDeleteCard = () => {
     setData((prevData) => prevData.filter((item) => item.id !== parsedData.id));
+    message.success(`${capitalize(context)} deleted successfully`);
   };
 
   const handleAvoidPropagation = (e) => {

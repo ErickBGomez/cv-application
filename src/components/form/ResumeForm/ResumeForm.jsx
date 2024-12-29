@@ -1,4 +1,5 @@
-import { Button, Form, Input } from "antd";
+import { useContext } from "react";
+import { Button, Form, Input, App } from "antd";
 import {
   MdPerson,
   MdCall,
@@ -6,18 +7,26 @@ import {
   MdBusinessCenter,
   MdStar,
 } from "react-icons/md";
+import { useNavigate } from "react-router";
 import FormSection from "../FormSection/FormSection";
-import "./ResumeForm.scss";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
 import * as validator from "../../../helpers/form-validators/resume-form-validators";
-import { useNavigate } from "react-router";
+import ResumeDataContext from "../../../context/ResumeDataContext";
+import "./ResumeForm.scss";
 
 const ResumeForm = () => {
+  const { saveData } = useContext(ResumeDataContext);
   const navigate = useNavigate();
+  const { message } = App.useApp();
 
   const handleSubmit = (values) => {
-    console.log(values);
+    saveData(values);
+    message.success("Resume created successfully");
     navigate("/result", { state: { values } });
+  };
+
+  const handleFailedSubmit = () => {
+    message.error("Please fill all the required fields");
   };
 
   return (
@@ -26,6 +35,7 @@ const ResumeForm = () => {
       className="resume-form"
       layout="vertical"
       onFinish={handleSubmit}
+      onFinishFailed={handleFailedSubmit}
       requiredMark="optional"
     >
       <FormSection icon={<MdPerson />} title="Personal Information">

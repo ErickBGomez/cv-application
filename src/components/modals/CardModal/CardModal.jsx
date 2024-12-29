@@ -1,4 +1,13 @@
-import { Modal, Form, Input, Rate, InputNumber, Checkbox, Button } from "antd";
+import {
+  Modal,
+  Form,
+  Input,
+  Rate,
+  InputNumber,
+  Checkbox,
+  Button,
+  App,
+} from "antd";
 import "./CardModal.scss";
 import * as commonValidator from "../../../helpers/form-validators/common-validators";
 import * as educationValidator from "../../../helpers/form-validators/education-modal-validators";
@@ -17,6 +26,7 @@ const CardModal = ({
 }) => {
   const [checkPresent, setCheckPresent] = useState(false);
   const [form] = Form.useForm();
+  const { message } = App.useApp();
 
   const onSubmit = (values) => {
     // Set end year to "Present" if the checkbox is checked
@@ -31,7 +41,9 @@ const CardModal = ({
           ...values,
         },
       ]);
-      if (mode === "create") form.resetFields();
+
+      form.resetFields();
+      message.success(`${capitalize(context)} created successfully`);
     }
 
     // Update current data in edit mode, without mutating the rest of entries
@@ -42,6 +54,8 @@ const CardModal = ({
           item.id === data.id ? { ...data, ...values } : item
         )
       );
+
+      message.success(`${capitalize(context)} updated successfully`);
     }
 
     closeModal();
