@@ -6,6 +6,7 @@ import Resume from "./components/resume/Resume/Resume";
 import MainLayout from "./pages/layout/MainLayout/MainLayout";
 import FormPage from "./pages/FormPage/FormPage";
 import ResumePage from "./pages/ResumePage/ResumePage";
+import NotFound from "./pages/errors/NotFound/NotFound";
 
 /*
   TODOs:
@@ -18,6 +19,7 @@ const App = () => {
       <Route element={<MainLayout />}>
         <Route path="/" element={<FormPage />} />
         <Route path="/result" element={<ResumePage />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
