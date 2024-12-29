@@ -17,7 +17,15 @@ import "./ResumeForm.scss";
 const ResumeForm = ({ data }) => {
   const { saveData } = useContext(ResumeDataContext);
   const navigate = useNavigate();
+  const [form] = Form.useForm();
   const { message } = App.useApp();
+
+  // Set initial value when first loading the component (specially reloading)
+  useEffect(() => {
+    if (data) {
+      form.setFieldsValue(data);
+    }
+  }, [data, form]);
 
   const handleSubmit = (values) => {
     saveData(values);
@@ -31,6 +39,7 @@ const ResumeForm = ({ data }) => {
 
   return (
     <Form
+      form={form}
       name="resume-form"
       className="resume-form"
       layout="vertical"

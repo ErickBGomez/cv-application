@@ -20,7 +20,9 @@ const DragCardsInput = ({ onChange, context = "card", initialValue = [] }) => {
 
   // Set initial value when first loading the component (specially reloading)
   useEffect(() => {
-    setEntries(initialValue);
+    if (initialValue) {
+      setEntries(initialValue);
+    }
   }, [initialValue]);
 
   // Set sensors to fix problem with onClick events
