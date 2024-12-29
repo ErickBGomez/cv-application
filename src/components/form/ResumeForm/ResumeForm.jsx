@@ -14,7 +14,7 @@ import * as validator from "../../../helpers/form-validators/resume-form-validat
 import ResumeDataContext from "../../../context/ResumeDataContext";
 import "./ResumeForm.scss";
 
-const ResumeForm = () => {
+const ResumeForm = ({ data }) => {
   const { saveData } = useContext(ResumeDataContext);
   const navigate = useNavigate();
   const { message } = App.useApp();
@@ -22,7 +22,7 @@ const ResumeForm = () => {
   const handleSubmit = (values) => {
     saveData(values);
     message.success("Resume created successfully");
-    navigate("/result", { state: { values } });
+    navigate("/result");
   };
 
   const handleFailedSubmit = () => {
@@ -37,6 +37,7 @@ const ResumeForm = () => {
       onFinish={handleSubmit}
       onFinishFailed={handleFailedSubmit}
       requiredMark="optional"
+      initialValues={{ ...data }}
     >
       <FormSection icon={<MdPerson />} title="Personal Information">
         <Form.Item
