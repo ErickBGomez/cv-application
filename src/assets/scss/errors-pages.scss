@@ -1,0 +1,13 @@
+@use "./colors";
+@use "./text-styles";
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .error-title {
+    @include text-styles.error-title;
+    color: colors.$black-75;
+  }
+}

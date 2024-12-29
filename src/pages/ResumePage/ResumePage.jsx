@@ -4,14 +4,16 @@ import { EditOutlined, PlusOutlined, PrinterOutlined } from "@ant-design/icons";
 import Resume from "../../components/resume/Resume/Resume";
 import ResumeDataContext from "../../context/ResumeDataContext";
 import "./ResumePage.scss";
+import { useNavigate } from "react-router";
+import NoData from "../errors/NoData/NoData";
 
 const ResumePage = () => {
   const { data } = useContext(ResumeDataContext);
+  const navigate = useNavigate();
 
-  console.log(data);
   return (
     <div className="resume-page">
-      {data && (
+      {data ? (
         <>
           <section className="title-section">
             <h1 className="title">Your Resume</h1>
@@ -28,6 +30,8 @@ const ResumePage = () => {
             <Resume data={data} />
           </section>
         </>
+      ) : (
+        <NoData />
       )}
     </div>
   );
