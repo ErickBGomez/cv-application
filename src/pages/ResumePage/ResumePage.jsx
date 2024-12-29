@@ -67,7 +67,7 @@ const ResumePage = () => {
         </Button>
         <Button icon={<PrinterOutlined />}>Print</Button>
       </section>
-      <section className="form-section">
+      <section className="resume-section">
         <Resume data={data} />
       </section>
     </div>
