@@ -6,6 +6,8 @@ import "./Resume.scss";
 import ResumeEntry from "../ResumeEntry/ResumeEntry";
 
 const Resume = ({ data }) => {
+  if (!data) return null;
+
   const {
     fullname,
     jobTitle,

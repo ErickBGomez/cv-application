@@ -5,7 +5,7 @@ import ResumeDataContext from "./ResumeDataContext";
 const ResumeDataProvider = ({ children }) => {
   const { message } = App.useApp();
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   const saveData = (newData) => {
     setData(newData);
@@ -15,7 +15,7 @@ const ResumeDataProvider = ({ children }) => {
   const loadData = () => {
     const data = localStorage.getItem("resumeData");
     message.success("Resume information loaded successfully");
-    return data ? JSON.parse(data) : [];
+    return data ? JSON.parse(data) : null;
   };
 
   return (
