@@ -14,16 +14,17 @@ import DragCard from "../DragCard/DragCard";
 import "./DragCardsInput.scss";
 
 // Use onChange from Ant Design Form.Item to update the form values
-const DragCardsInput = ({ onChange, context = "card", initialValue = [] }) => {
-  const [entries, setEntries] = useState(initialValue);
+const DragCardsInput = ({ onChange, context = "card", value = [] }) => {
+  const [entries, setEntries] = useState(value);
   const [modalOpen, setModalOpen] = useState(false);
 
+  // TODO: Work but exceeds the render limit
   // Set initial value when first loading the component (specially reloading)
-  useEffect(() => {
-    if (initialValue) {
-      setEntries(initialValue);
-    }
-  }, [initialValue]);
+  // useEffect(() => {
+  //   if (initialValue) {
+  //     setEntries(initialValue);
+  //   }
+  // }, []);
 
   // Set sensors to fix problem with onClick events
   const sensors = useSensors(
