@@ -105,7 +105,7 @@ const ResumeForm = () => {
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="submit-button">
-          Submit
+          Create resume
         </Button>
       </Form.Item>
     </Form>
