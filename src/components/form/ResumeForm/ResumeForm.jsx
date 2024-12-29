@@ -7,18 +7,22 @@ import {
   MdBusinessCenter,
   MdStar,
 } from "react-icons/md";
-import { useNavigate } from "react-router";
+import { useNavigate, useSearchParams } from "react-router";
 import FormSection from "../FormSection/FormSection";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
 import * as validator from "../../../helpers/form-validators/resume-form-validators";
 import ResumeDataContext from "../../../context/ResumeDataContext";
+import { capitalize } from "../../../helpers/strings";
 import "./ResumeForm.scss";
 
 const ResumeForm = ({ data }) => {
   const { saveData } = useContext(ResumeDataContext);
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [form] = Form.useForm();
   const { message } = App.useApp();
+  const mode = searchParams.get("edit") ? "edit" : "create";
+  const modePast = mode === "edit" ? "edited" : "created";
 
   // Set initial value when first loading the component (specially reloading)
   useEffect(() => {
@@ -29,7 +33,7 @@ const ResumeForm = ({ data }) => {
 
   const handleSubmit = (values) => {
     saveData(values);
-    message.success("Resume created successfully");
+    message.success(`Resume ${modePast} successfully`);
     navigate("/result");
   };
 
@@ -128,7 +132,7 @@ const ResumeForm = ({ data }) => {
 
       <Form.Item>
         <Button type="primary" htmlType="submit" className="submit-button">
-          Create resume
+          {capitalize(mode)} resume
         </Button>
       </Form.Item>
     </Form>

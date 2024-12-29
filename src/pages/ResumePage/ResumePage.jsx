@@ -11,17 +11,13 @@ const ResumePage = () => {
   const { data, removeData } = useContext(ResumeDataContext);
   const navigate = useNavigate();
 
-  const goToForm = () => {
-    navigate("/");
-  };
-
   const handleEdit = () => {
-    goToForm();
+    navigate("/?edit=true");
   };
 
   const handleNewResume = () => {
     removeData();
-    goToForm();
+    navigate("/");
   };
 
   return (

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import ResumeForm from "../../components/form/ResumeForm/ResumeForm";
 import ResumeDataContext from "../../context/ResumeDataContext";
 import "./FormPage.scss";
@@ -15,7 +15,6 @@ const FormPage = () => {
         </div>
       </section>
       <section className="form-section">
-        <div>{data?.education.length}</div>
         <ResumeForm data={data} />
       </section>
     </div>
