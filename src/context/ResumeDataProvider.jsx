@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { ResumeDataContext } from "./ResumeDataContext";
+import ResumeDataContext from "./ResumeDataContext";
 
-const ResumeDataContextProvider = ({ children }) => {
+const ResumeDataProvider = ({ children }) => {
   const [data, setData] = useState([]);
 
   const saveData = (newData) => {
@@ -15,4 +15,4 @@ const ResumeDataContextProvider = ({ children }) => {
   );
 };
 
-export default ResumeDataContextProvider;
+export default ResumeDataProvider;

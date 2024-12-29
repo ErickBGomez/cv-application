@@ -6,6 +6,7 @@ import "./main.scss";
 import "./assets/scss/antd-reset.scss";
 import { IconContext } from "react-icons";
 import { BrowserRouter } from "react-router";
+import ResumeDataProvider from "./context/ResumeDataProvider.jsx";
 
 const appTheme = {
   token: {
@@ -27,7 +28,9 @@ createRoot(document.getElementById("root")).render(
       <IconContext.Provider value={{ size: "1.5rem" }}>
         <ConfigProvider theme={appTheme}>
           <AntdApp>
-            <App />
+            <ResumeDataProvider>
+              <App />
+            </ResumeDataProvider>
           </AntdApp>
         </ConfigProvider>
       </IconContext.Provider>

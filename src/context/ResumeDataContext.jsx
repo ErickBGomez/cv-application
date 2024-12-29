@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
-export const ResumeDataContext = createContext();
+const ResumeDataContext = createContext();
+
+export default ResumeDataContext;
