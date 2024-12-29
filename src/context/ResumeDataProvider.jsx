@@ -27,8 +27,13 @@ const ResumeDataProvider = ({ children }) => {
     localStorage.setItem("resumeData", JSON.stringify(newData));
   };
 
+  const removeData = () => {
+    setData(null);
+    localStorage.removeItem("resumeData");
+  };
+
   return (
-    <ResumeDataContext.Provider value={{ data, saveData }}>
+    <ResumeDataContext.Provider value={{ data, saveData, removeData }}>
       {children}
     </ResumeDataContext.Provider>
   );
