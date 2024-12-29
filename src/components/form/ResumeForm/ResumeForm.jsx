@@ -90,7 +90,7 @@ const ResumeForm = ({ data }) => {
           rules={validator.educationRules}
           validateTrigger="onSubmit"
         >
-          <DragCardsInput context="education" />
+          <DragCardsInput context="education" initialValue={data?.education} />
         </Form.Item>
       </FormSection>
 
@@ -100,7 +100,10 @@ const ResumeForm = ({ data }) => {
           rules={validator.workExperienceRules}
           validateTrigger="onSubmit"
         >
-          <DragCardsInput context="work experience" />
+          <DragCardsInput
+            context="work experience"
+            initialValue={data?.workExperience}
+          />
         </Form.Item>
       </FormSection>
 
@@ -110,7 +113,7 @@ const ResumeForm = ({ data }) => {
           rules={validator.skillsRules}
           validateTrigger="onSubmit"
         >
-          <DragCardsInput context="skill" />
+          <DragCardsInput context="skill" initialValue={data?.skills} />
         </Form.Item>
       </FormSection>
 

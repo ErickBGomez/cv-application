@@ -14,8 +14,8 @@ import DragCard from "../DragCard/DragCard";
 import "./DragCardsInput.scss";
 
 // Use onChange from Ant Design Form.Item to update the form values
-const DragCardsInput = ({ onChange, context = "card" }) => {
-  const [entries, setEntries] = useState([]);
+const DragCardsInput = ({ onChange, context = "card", initialValue = [] }) => {
+  const [entries, setEntries] = useState(initialValue);
   const [modalOpen, setModalOpen] = useState(false);
 
   // Set sensors to fix problem with onClick events
