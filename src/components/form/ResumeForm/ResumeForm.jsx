@@ -41,7 +41,7 @@ const ResumeForm = () => {
       <FormSection icon={<MdPerson />} title="Personal Information">
         <Form.Item
           label="Full name"
-          name="fullName"
+          name="fullname"
           rules={validator.fullnameRules}
         >
           <Input placeholder="e.g. John Doe" />
