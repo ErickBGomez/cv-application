@@ -18,7 +18,7 @@ const ResumeDataProvider = ({ children }) => {
       if (!loaded) return;
 
       setData(loaded);
-      message.info("Resume information recovered");
+      message.info("Resume information recovered from last session");
     }
   }, [data]);
 

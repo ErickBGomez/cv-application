@@ -6,7 +6,6 @@ import NotFound from "./pages/errors/NotFound/NotFound";
 
 /*
   TODOs:
-  3. Delete existing data when clicking on "New resume" button
   4. Print resume
   5. Check string lengths of resume result
 */
