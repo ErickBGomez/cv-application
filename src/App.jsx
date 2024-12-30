@@ -6,12 +6,9 @@ import NotFound from "./pages/errors/NotFound/NotFound";
 
 /*
   TODOs:
-  1. Load form with local storage
-  2. Edit existing form data from resume page
   3. Delete existing data when clicking on "New resume" button
   4. Print resume
   5. Check string lengths of resume result
-  6. Some fields are not loading in result page
 */
 
 const App = () => {
