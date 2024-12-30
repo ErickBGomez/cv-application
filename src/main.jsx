@@ -7,20 +7,7 @@ import "./assets/scss/antd-reset.scss";
 import { IconContext } from "react-icons";
 import { BrowserRouter } from "react-router";
 import ResumeDataProvider from "./context/ResumeDataProvider.jsx";
-
-const appTheme = {
-  token: {
-    colorTextBase: "#2c313c",
-    colorPrimary: "#426ece",
-    colorInfo: "#426ece",
-    fontSize: 16,
-    borderRadius: 8,
-    wireframe: false,
-    colorBgBase: "#fcfcfd",
-    colorSuccess: "#43e285",
-    fontFamily: "'Raleway', sans-serif",
-  },
-};
+import appTheme from "./helpers/theme.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
