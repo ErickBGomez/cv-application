@@ -7,7 +7,7 @@ const appTheme = {
     borderRadius: 8,
     wireframe: false,
     colorBgBase: "#fcfcfd",
-    colorSuccess: "#43e285",
+    colorSuccess: "#30b96b",
     fontFamily: "'Raleway', sans-serif",
   },
 };
