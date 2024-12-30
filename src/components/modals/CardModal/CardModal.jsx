@@ -225,7 +225,7 @@ const CardModal = ({
       centered
       closable={false}
       maskClosable={false}
-      width={380}
+      width={400}
     >
       <Form
         // Set the form name based on the mode and context
