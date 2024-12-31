@@ -4,7 +4,7 @@ export const skillRules = [
 
 export const rateRules = [
   { required: true, message: "Rate is required" },
-  ({ getFieldValue }) => ({
+  () => ({
     validator(_, value) {
       if (value >= 1 && value <= 5) {
         return Promise.resolve();

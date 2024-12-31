@@ -12,6 +12,7 @@ const ResumeDataProvider = ({ children }) => {
     return JSON.parse(localStorage.getItem("resumeData"));
   };
 
+  // Recover data from local storage if it exists
   useEffect(() => {
     if (!data) {
       const loaded = loadData();
@@ -21,7 +22,7 @@ const ResumeDataProvider = ({ children }) => {
       setData(loaded);
       message.info("Resume information recovered from last session");
     }
-  }, [data]);
+  }, [data, message]);
 
   const saveData = (newData) => {
     setData(newData);

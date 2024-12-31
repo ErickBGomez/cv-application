@@ -19,13 +19,6 @@ const DragCardsInput = ({ onChange, context = "card", initialValue = [] }) => {
   const [entries, setEntries] = useState(initialValue);
   const [modalOpen, setModalOpen] = useState(false);
 
-  // Set initial value when first loading the component (specially reloading)
-  useEffect(() => {
-    if (initialValue) {
-      setEntries(initialValue);
-    }
-  }, [initialValue]);
-
   // Set sensors to fix problem with onClick events
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -35,10 +28,17 @@ const DragCardsInput = ({ onChange, context = "card", initialValue = [] }) => {
     })
   );
 
+  // Set initial value when first loading the component (specially reloading)
+  useEffect(() => {
+    if (initialValue) {
+      setEntries(initialValue);
+    }
+  }, [initialValue]);
+
   // Update form values when entries change
   useEffect(() => {
     onChange(entries);
-  }, [entries]);
+  }, [entries, onChange]);
 
   const handleOpenModal = () => {
     setModalOpen(true);
