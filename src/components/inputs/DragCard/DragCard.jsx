@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import { Rate, Popconfirm, App } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { MdDragIndicator, MdClose } from "react-icons/md";
@@ -129,6 +130,12 @@ const DragCard = ({ context, data, setData }) => {
       </div>
     </>
   );
+};
+
+DragCard.propTypes = {
+  context: PropTypes.string,
+  data: PropTypes.object,
+  setData: PropTypes.func,
 };
 
 export default DragCard;

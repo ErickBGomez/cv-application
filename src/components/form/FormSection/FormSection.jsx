@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./FormSection.scss";
 
 const FormSection = ({ icon, title, children }) => {
@@ -10,6 +11,12 @@ const FormSection = ({ icon, title, children }) => {
       <div className="inputs">{children}</div>
     </fieldset>
   );
+};
+
+FormSection.propTypes = {
+  icon: PropTypes.node,
+  title: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default FormSection;

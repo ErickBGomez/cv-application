@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+import PropTypes from "prop-types";
 import { Button, Form, Input, App } from "antd";
 import {
   MdPerson,
@@ -137,6 +138,10 @@ const ResumeForm = ({ data }) => {
       </Form.Item>
     </Form>
   );
+};
+
+ResumeForm.propTypes = {
+  data: PropTypes.object,
 };
 
 export default ResumeForm;

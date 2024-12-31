@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { Button } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
 import {
@@ -93,6 +94,12 @@ const DragCardsInput = ({ onChange, context = "card", initialValue = [] }) => {
       </Button>
     </div>
   );
+};
+
+DragCardsInput.propTypes = {
+  onChange: PropTypes.func,
+  context: PropTypes.string,
+  initialValue: PropTypes.array,
 };
 
 export default DragCardsInput;
