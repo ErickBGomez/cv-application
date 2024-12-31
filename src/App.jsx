@@ -4,11 +4,6 @@ import FormPage from "./pages/FormPage/FormPage";
 import ResumePage from "./pages/ResumePage/ResumePage";
 import NotFound from "./pages/errors/NotFound/NotFound";
 
-/*
-  TODOs:
-  1. Print resume
-*/
-
 const App = () => {
   return (
     <Routes>
