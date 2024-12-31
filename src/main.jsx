@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router";
 import App from "./App.jsx";
 import ResumeDataProvider from "./context/ResumeDataProvider.jsx";
 import appTheme from "./helpers/theme.js";
-import "./main.scss";
+import "./assets/scss/main.scss";
 import "./assets/scss/antd-reset.scss";
 
 createRoot(document.getElementById("root")).render(
