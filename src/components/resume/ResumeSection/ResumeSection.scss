@@ -1,6 +1,12 @@
 @use "../../../assets/scss/colors";
 
 .resume-section {
+  width: 100%;
+
+  h2 {
+    font-size: 1rem;
+  }
+
   .icon {
     display: flex;
     flex-direction: column;
@@ -20,16 +26,14 @@
   }
 
   & > .title {
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
     border-bottom: 2px solid colors.$black;
   }
 }
 
 .resume-aside .resume-section {
   & > .title {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
     border-color: colors.$white;
   }
 
