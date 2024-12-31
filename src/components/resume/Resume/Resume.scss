@@ -19,7 +19,7 @@
 
   .resume-header {
     grid-area: header;
-    padding: 4.38rem 0;
+    padding: 4.38rem 4rem;
     text-align: center;
     background-color: colors.$primary;
     color: colors.$white;
@@ -49,14 +49,14 @@
 
   .resume-aside {
     grid-area: aside;
-    padding: 3.75rem 3.12rem;
+    padding: 3rem 2.5rem;
     background-color: colors.$black;
     color: colors.$white;
   }
 
   .resume-main {
     grid-area: main;
-    padding: 3.75rem 4.5rem;
+    padding: 3rem 3.5rem;
     color: colors.$black;
   }
 }
