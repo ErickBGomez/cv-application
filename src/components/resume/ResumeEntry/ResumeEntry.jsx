@@ -13,7 +13,7 @@ const ResumeEntry = ({ context, data = {} }) => {
           ...commonData,
           title: data.degree,
           subtitle: data.institution,
-          description: data.gpa,
+          description: data.gpa.toFixed(1),
         }
       : {
           ...commonData,
