@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 import {
   Modal,
   Form,
@@ -256,6 +257,15 @@ const CardModal = ({
       </Form>
     </Modal>
   );
+};
+
+CardModal.propTypes = {
+  context: PropTypes.string,
+  open: PropTypes.bool,
+  setOpen: PropTypes.func,
+  data: PropTypes.object,
+  setData: PropTypes.func,
+  mode: PropTypes.string,
 };
 
 export default CardModal;
