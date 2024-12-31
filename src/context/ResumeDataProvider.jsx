@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { App } from "antd";
 import ResumeDataContext from "./ResumeDataContext";
 
@@ -37,6 +38,10 @@ const ResumeDataProvider = ({ children }) => {
       {children}
     </ResumeDataContext.Provider>
   );
+};
+
+ResumeDataProvider.propTypes = {
+  children: PropTypes.node,
 };
 
 export default ResumeDataProvider;
