@@ -7,7 +7,7 @@ export const jobTitleRules = [
 ];
 
 export const aboutRules = [
-  { max: 150, message: "About must be at most 150 characters" },
+  { max: 300, message: "About must be at most 300 characters" },
 ];
 
 export const emailRules = [

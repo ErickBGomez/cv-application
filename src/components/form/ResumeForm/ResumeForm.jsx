@@ -73,7 +73,7 @@ const ResumeForm = ({ data }) => {
           <Input.TextArea
             rows={4}
             showCount
-            maxLength={150}
+            maxLength={300}
             placeholder="e.g. Currently working as a web developer at Tech Company"
           />
         </Form.Item>
