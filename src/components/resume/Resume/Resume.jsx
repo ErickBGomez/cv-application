@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { MdCall, MdEmail, MdLocationOn } from "react-icons/md";
 import ResumeSection from "../ResumeSection/ResumeSection";
 import ContactInfo from "../ContactInfo/ContactInfo";
@@ -64,6 +65,10 @@ const Resume = ({ data }) => {
       </div>
     </div>
   );
+};
+
+Resume.propTypes = {
+  data: PropTypes.object,
 };
 
 export default Resume;

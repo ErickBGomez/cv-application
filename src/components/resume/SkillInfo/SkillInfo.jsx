@@ -1,5 +1,6 @@
 import { Rate } from "antd";
 import "./SkillInfo.scss";
+import PropTypes from "prop-types";
 
 const SkillInfo = ({ skill, value }) => {
   return (
@@ -10,6 +11,11 @@ const SkillInfo = ({ skill, value }) => {
       </div>
     </div>
   );
+};
+
+SkillInfo.propTypes = {
+  skill: PropTypes.string,
+  value: PropTypes.number,
 };
 
 export default SkillInfo;

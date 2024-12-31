@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./ContactInfo.scss";
 
 const ContactInfo = ({ icon, info }) => {
@@ -7,6 +8,11 @@ const ContactInfo = ({ icon, info }) => {
       <div className="info">{info}</div>
     </div>
   );
+};
+
+ContactInfo.propTypes = {
+  icon: PropTypes.node,
+  info: PropTypes.string,
 };
 
 export default ContactInfo;

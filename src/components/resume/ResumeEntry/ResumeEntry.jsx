@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./ResumeEntry.scss";
 
 const ResumeEntry = ({ context, data = {} }) => {
@@ -42,6 +43,11 @@ const ResumeEntry = ({ context, data = {} }) => {
       )}
     </div>
   );
+};
+
+ResumeEntry.propTypes = {
+  context: PropTypes.string,
+  data: PropTypes.object,
 };
 
 export default ResumeEntry;
