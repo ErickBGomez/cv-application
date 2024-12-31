@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Button, Modal } from "antd";
 import { EditOutlined, PlusOutlined, PrinterOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router";
@@ -11,6 +11,10 @@ const ResumePage = () => {
   const { data, removeData } = useContext(ResumeDataContext);
   const navigate = useNavigate();
   const [modal, contextHolder] = Modal.useModal();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const handleEdit = () => {
     navigate("/?edit=true");
