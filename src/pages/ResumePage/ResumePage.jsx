@@ -51,7 +51,14 @@ const ResumePage = () => {
             >
               New resume
             </Button>
-            <Button icon={<PrinterOutlined />}>Print</Button>
+            <Button
+              icon={<PrinterOutlined />}
+              onClick={() => {
+                window.print();
+              }}
+            >
+              Print
+            </Button>
           </section>
           <section className="resume-section">
             <Resume data={data} />
