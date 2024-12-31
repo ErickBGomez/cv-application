@@ -25,6 +25,13 @@
   }
 }
 
+@media screen {
+  .resume {
+    max-width: 950px;
+    min-height: 1343px;
+  }
+}
+
 @media print {
   header,
   footer,

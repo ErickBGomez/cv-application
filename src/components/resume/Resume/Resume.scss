@@ -2,8 +2,6 @@
 @use "../../../assets/scss/text-styles";
 
 .resume {
-  max-width: 950px;
-  width: 100%;
   display: grid;
   grid-template-columns: 15rem 1fr;
   grid-template-rows: min-content 1fr;
