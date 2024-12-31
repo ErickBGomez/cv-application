@@ -38,6 +38,7 @@
   }
 
   .resume-page > .resume-section {
+    print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
     box-shadow: none;
   }
