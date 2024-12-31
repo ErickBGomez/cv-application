@@ -6,8 +6,7 @@ import NotFound from "./pages/errors/NotFound/NotFound";
 
 /*
   TODOs:
-  4. Print resume
-  5. Check string lengths of resume result
+  1. Print resume
 */
 
 const App = () => {

@@ -34,18 +34,6 @@ const ResumePage = () => {
   return (
     <div className="resume-page">
       {contextHolder}
-      {/* <Modal
-        title="Create new resume"
-        open={modalOpen}
-        onOk={handleNewResume}
-        centered
-        width={350}
-        closable={false}
-        onCancel={() => setModalOpen(false)}
-      >
-        <p>Are your sure you want to create a new resume?</p>
-        <p>All existing data will be lost.</p>
-      </Modal> */}
       {data ? (
         <>
           <section className="title-section">
