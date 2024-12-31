@@ -3,7 +3,7 @@
 
 header {
   padding: 2rem 12.5rem;
-  border-bottom: 1px solid colors.$black;
+  border-bottom: 1px solid colors.$black-10;
 
   .logo {
     @include text-styles.header-logo;
