@@ -1,10 +1,11 @@
 @use "../../../assets/scss/colors";
+@use "../../../assets/scss/text-styles";
 
 .resume-section {
   width: 100%;
 
   h2 {
-    font-size: 1rem;
+    @include text-styles.resume-section-title;
   }
 
   .icon {

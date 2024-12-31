@@ -82,6 +82,12 @@
   font-weight: 400;
 }
 
+@mixin resume-section-title() {
+  @include common-styles;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
 @mixin header-logo() {
   @include common-styles;
   font-size: 1.2rem;
