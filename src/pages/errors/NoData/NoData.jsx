@@ -1,5 +1,5 @@
-import { Button } from "antd";
 import { useNavigate } from "react-router";
+import { Button } from "antd";
 import "../../../assets/scss/errors-pages.scss";
 
 const NoData = () => {

@@ -2,8 +2,8 @@ import { MdCall, MdEmail, MdLocationOn } from "react-icons/md";
 import ResumeSection from "../ResumeSection/ResumeSection";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import SkillInfo from "../SkillInfo/SkillInfo";
-import "./Resume.scss";
 import ResumeEntry from "../ResumeEntry/ResumeEntry";
+import "./Resume.scss";
 
 const Resume = ({ data }) => {
   if (!data) return null;

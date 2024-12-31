@@ -11,8 +11,8 @@ import {
 import { useNavigate, useSearchParams } from "react-router";
 import FormSection from "../FormSection/FormSection";
 import DragCardsInput from "../../inputs/DragCardsInput/DragCardsInput";
-import * as validator from "../../../helpers/form-validators/resume-form-validators";
 import ResumeDataContext from "../../../context/ResumeDataContext";
+import * as validator from "../../../helpers/form-validators/resume-form-validators";
 import { capitalize } from "../../../helpers/strings";
 import "./ResumeForm.scss";
 

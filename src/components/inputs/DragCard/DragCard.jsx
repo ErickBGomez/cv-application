@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import { Rate, Popconfirm, App } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { MdDragIndicator, MdClose } from "react-icons/md";
-import CardModal from "../../modals/CardModal/CardModal";
-import "./DragCard.scss";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import CardModal from "../../modals/CardModal/CardModal";
 import { capitalize } from "../../../helpers/strings";
+import "./DragCard.scss";
 
 const DragCard = ({ context, data, setData }) => {
   const { message } = App.useApp();

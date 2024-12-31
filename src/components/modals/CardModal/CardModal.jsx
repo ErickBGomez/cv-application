@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Modal,
   Form,
@@ -8,13 +9,12 @@ import {
   Button,
   App,
 } from "antd";
-import "./CardModal.scss";
 import * as commonValidator from "../../../helpers/form-validators/common-validators";
 import * as educationValidator from "../../../helpers/form-validators/education-modal-validators";
 import * as workValidator from "../../../helpers/form-validators/work-experience-modal-validators";
 import * as skillValidator from "../../../helpers/form-validators/skills-modal-validators";
 import { capitalize } from "../../../helpers/strings";
-import { useEffect, useState } from "react";
+import "./CardModal.scss";
 
 const CardModal = ({
   context,
