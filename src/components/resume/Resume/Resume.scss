@@ -3,19 +3,15 @@
 
 .resume {
   max-width: 950px;
+  width: 100%;
   display: grid;
-  grid-template-columns: 20rem 1fr;
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: min-content 1fr;
   grid-template-areas:
     "header header"
     "aside main";
   background-color: colors.$white;
   overflow: hidden;
-
-  // *:not(.icon) {
-  //   white-space: nowrap;
-  //   overflow: hidden;
-  //   text-overflow: ellipsis;
-  // }
 
   .resume-header {
     grid-area: header;
