@@ -6,5 +6,11 @@
     display: flex;
     gap: 0.62rem;
     align-items: center;
+
+    & > *:not(.icon) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }

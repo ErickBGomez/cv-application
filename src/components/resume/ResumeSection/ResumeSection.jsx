@@ -1,10 +1,10 @@
 import "./ResumeSection.scss";
 
-const ResumeSection = ({ title, children, list }) => {
+const ResumeSection = ({ title, children, className, list }) => {
   return (
-    <section className="resume-section">
+    <section className={`resume-section ${className}`}>
       <h2 className="title">{title}</h2>
-      <div className={`content ${list && "list"}`}>{children}</div>
+      <div className={`content${list ? " list" : ""}`}>{children}</div>
     </section>
   );
 };

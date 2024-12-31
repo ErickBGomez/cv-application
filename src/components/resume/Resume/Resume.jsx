@@ -27,7 +27,11 @@ const Resume = ({ data }) => {
         <div className="work-position">{jobTitle}</div>
       </div>
       <aside className="resume-aside">
-        {about && <ResumeSection title="About">{about}</ResumeSection>}
+        {about && (
+          <ResumeSection className="about" title="About">
+            {about}
+          </ResumeSection>
+        )}
         <ResumeSection title="Contact" list>
           <ContactInfo icon={<MdEmail size="1.25rem" />} info={email} />
           <ContactInfo icon={<MdCall size="1.25rem" />} info={phoneNumber} />

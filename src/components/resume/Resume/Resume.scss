@@ -9,6 +9,13 @@
     "header header"
     "aside main";
   background-color: colors.$white;
+  overflow: hidden;
+
+  // *:not(.icon) {
+  //   white-space: nowrap;
+  //   overflow: hidden;
+  //   text-overflow: ellipsis;
+  // }
 
   .resume-header {
     grid-area: header;
@@ -16,6 +23,13 @@
     text-align: center;
     background-color: colors.$primary;
     color: colors.$white;
+    max-width: inherit;
+
+    & > * {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     .fullname {
       @include text-styles.resume-fullname-title;

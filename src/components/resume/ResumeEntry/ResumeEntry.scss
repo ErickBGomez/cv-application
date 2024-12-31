@@ -9,6 +9,13 @@
     "description description";
   row-gap: 0.2rem;
 
+  .title,
+  .subtitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .title {
     grid-area: title;
     font-weight: 700;
@@ -25,6 +32,7 @@
 
   .description {
     grid-area: description;
+    word-wrap: break-word;
 
     .gpa {
       font-weight: 700;
