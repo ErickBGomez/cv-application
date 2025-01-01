@@ -1,4 +1,4 @@
-import { MdOutlineArticle } from "react-icons/md";
+import Logo from "../../../../public/favicon.svg";
 import "./Header.scss";
 
 const Header = () => {
@@ -6,7 +6,7 @@ const Header = () => {
     <header>
       <div className="logo">
         <div className="icon">
-          <MdOutlineArticle />
+          <img src={Logo} alt="Resume Generator logo" />
         </div>
         <div className="title">Resume Generator</div>
       </div>
