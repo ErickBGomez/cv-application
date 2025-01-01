@@ -1,4 +1,4 @@
-import Logo from "../../../../public/favicon.svg";
+import Logo from "../../../assets/svg/logo.svg";
 import "./Header.scss";
 
 const Header = () => {
