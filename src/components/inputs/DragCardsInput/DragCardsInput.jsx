@@ -33,12 +33,12 @@ const DragCardsInput = ({ onChange, context = "card", initialValue = [] }) => {
     if (initialValue) {
       setEntries(initialValue);
     }
-  }, [initialValue]);
+  }, []);
 
   // Update form values when entries change
   useEffect(() => {
     onChange(entries);
-  }, [entries, onChange]);
+  }, [entries]);
 
   const handleOpenModal = () => {
     setModalOpen(true);
