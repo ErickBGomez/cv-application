@@ -26,3 +26,13 @@
     }
   }
 }
+
+@media (max-width: 400px) {
+  .card-form {
+    .inputs {
+      .years {
+        flex-direction: column;
+      }
+    }
+  }
+}
