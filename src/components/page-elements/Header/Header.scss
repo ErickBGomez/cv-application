@@ -2,6 +2,7 @@
 @use "../.././../assets/scss/text-styles";
 
 header {
+  display: flex;
   padding: 2rem 12.5rem;
   border-bottom: 1px solid colors.$black-10;
 
@@ -20,5 +21,12 @@ header {
         width: 24px;
       }
     }
+  }
+}
+
+@media (max-width: 620px) {
+  header {
+    padding: 2rem 0;
+    justify-content: center;
   }
 }
