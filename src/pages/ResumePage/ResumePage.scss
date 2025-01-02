@@ -32,6 +32,16 @@
   }
 }
 
+@media (max-width: 700px) {
+  .resume-page .resume-section {
+    overflow: auto;
+  }
+
+  .resume-page .resume {
+    min-width: 600px;
+  }
+}
+
 @media (max-width: 500px) {
   .resume-page .actions {
     width: 100%;
